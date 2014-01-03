@@ -1,15 +1,15 @@
 language: ruby
 rvm:
-  - 1.9.3
+  - 2.0.0
 
 addons:
   code_climate:
-    repo_token: 
+    repo_token:
 
 env:
   - RUBY_GC_MALLOC_LIMIT=90000000 RUBY_FREE_MIN=200000 SECURITY_SECRET_TOKEN=traviscitraviscitraviscitraviscitravisci
 
-services: 
+services:
   - postgresql
   - redis-server
 
@@ -20,7 +20,7 @@ before_script:
   - psql -c "CREATE DATABASE rails-bootstrap_test ENCODING 'utf8';" -U postgres
   - bundle exec rake db:migrate test:prepare
 
-script: 
+script:
   - bundle exec rspec
   - bundle exec cucumber
 
