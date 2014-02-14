@@ -1,0 +1,12 @@
+# This is the configuration used to check the rubocop source code.
+
+AllCops:
+  Excludes:
+    - features/support/env.rb
+    - spec/spec_helper.rb
+
+Documentation:
+  Enabled: false
+
+LineLength:
+  Max: 99

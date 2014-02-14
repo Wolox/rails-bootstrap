@@ -69,6 +69,7 @@ gem 'pundit'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rubocop'
 end
 
 group :debugging, :development, :test do
@@ -80,13 +81,13 @@ group :debugging, :development, :test do
 end
 
 group :test, :development do
-  
+
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
-  
+
   # Modify time in tests
   gem 'timecop'
 

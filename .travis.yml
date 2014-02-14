@@ -23,6 +23,7 @@ before_script:
 script:
   - bundle exec rspec
   - bundle exec cucumber
+  - bundle exec rubocop app spec features -R --format simple
 
 notifications:
   email:
