@@ -29,7 +29,7 @@ end
 
 gem "less-rails"
 gem "therubyracer"
-gem 'twitter-bootstrap-rails', '~> 2.2.8'#, :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :ref => "ca703a2"
+gem "twitter-bootstrap-rails"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -48,21 +48,21 @@ gem 'devise'
 
 #CodeClimate Reporter
 gem "codeclimate-test-reporter", group: :test, require: nil
-gem 'simplecov', :require => false, :group => :test
+gem 'simplecov', require: false, group: :test
 
 # Active Admin
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'formtastic', github: 'justinfrench/formtastic'
 
-# Enables HAML templates
-gem "haml-rails"
+# Enables Slim templates
+gem "slim-rails"
 
 # Resque, Resque Mailer and Scheduler
 gem 'resque'
 gem 'resque_mailer'
 gem "resque-batched-job"
 gem 'rufus-scheduler'
-gem 'resque-scheduler', :require => 'resque_scheduler'
+gem 'resque-scheduler', require: 'resque_scheduler'
 
 gem 'pundit'
 
@@ -85,7 +85,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
 
   # Modify time in tests
