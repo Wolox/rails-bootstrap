@@ -44,6 +44,11 @@ RSpec.configure do |config|
   # Method inclusion
   config.include FactoryGirl::Syntax::Methods
 
+  # Expect syntax
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+
   # Database cleaner
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
