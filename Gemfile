@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-ruby "2.0.0"
+ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.0'
 
 gem 'google-webfonts-rails'
 
@@ -27,9 +27,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem "less-rails"
-gem "therubyracer"
-gem "twitter-bootstrap-rails"
+gem 'less-rails'
+gem 'therubyracer'
+gem 'twitter-bootstrap-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -47,20 +47,22 @@ gem 'jquery-turbolinks'
 gem 'devise'
 
 #CodeClimate Reporter
-gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'codeclimate-test-reporter', group: :test, require: nil
 gem 'simplecov', require: false, group: :test
 
 # Active Admin
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'formtastic', github: 'justinfrench/formtastic'
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
+gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
 
 # Enables Slim templates
-gem "slim-rails"
+gem 'slim-rails'
 
 # Resque, Resque Mailer and Scheduler
 gem 'resque'
 gem 'resque_mailer'
-gem "resque-batched-job"
+gem 'resque-batched-job'
 gem 'rufus-scheduler'
 gem 'resque-scheduler', require: 'resque_scheduler'
 
@@ -74,8 +76,8 @@ end
 
 group :debugging, :development, :test do
   gem 'pry'
-  gem 'debugger'
-  gem 'debugger-pry'
+  gem 'byebug'
+  gem 'pry-byebug'
   gem 'pry-nav'
   gem 'pry-stack_explorer'
 end
