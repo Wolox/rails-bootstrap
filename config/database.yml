@@ -65,11 +65,8 @@ staging:
 production:
   adapter: postgresql
   encoding: unicode
-  database: rails-bootstrap_production
   pool: 5
-  username: rails-bootstrap
-  password: rails-bootstrap
-  host: localhost
+  url: <%= ENV['DATABASE_URL'] %>
 
 cucumber:
   <<: *test
