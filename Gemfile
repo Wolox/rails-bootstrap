@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.5'
 
 gem 'google-webfonts-rails'
 
@@ -16,17 +16,14 @@ gem 'app_configuration'
 # Use unicorn as the app server
 gem 'unicorn'
 
-group :assets do
-  # Use SCSS for stylesheets
-  gem 'sass-rails',   '~> 4.0.0'
+# Use SCSS for stylesheets
+gem 'sass-rails'
 
-  # Use CoffeeScript for .js.coffee assets and views
-  gem 'coffee-rails', '~> 4.0.0'
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails'
 
-  # Use Uglifier as compressor for JavaScript assets
-  gem 'uglifier', '>= 1.0.3'
-end
-
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier'
 gem 'less-rails'
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
@@ -46,32 +43,33 @@ gem 'jquery-turbolinks'
 
 gem 'devise'
 
-#CodeClimate Reporter
+# CodeClimate Reporter
 gem 'codeclimate-test-reporter', group: :test, require: nil
 gem 'simplecov', require: false, group: :test
 
 # Active Admin
-gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'formtastic', github: 'justinfrench/formtastic'
-gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
-gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
+gem 'activeadmin', github: 'activeadmin'
+gem 'formtastic'
+gem 'ransack'
+gem 'polyamorous'
 
 # Enables Slim templates
 gem 'slim-rails'
 
-# Resque, Resque Mailer and Scheduler
-gem 'resque'
-gem 'resque_mailer'
-gem 'resque-batched-job'
-gem 'rufus-scheduler'
-gem 'resque-scheduler', require: 'resque_scheduler'
+gem 'sidekiq'
 
 gem 'pundit'
+
+gem 'sinatra', '>= 1.3.0', require: nil
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  # Lints
   gem 'rubocop'
+  gem 'jslint_on_rails'
+  gem 'coffeelint'
 end
 
 group :debugging, :development, :test do

@@ -1,4 +1,0 @@
-ExamplerEmailWorker:
-  cron: "0,30 * * * *"
-  queue: example_queue
-  description: Makes something every 30 seconds
