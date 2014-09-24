@@ -69,8 +69,6 @@ group :development do
 
   # Lints
   gem 'rubocop'
-  gem 'jslint_on_rails'
-  gem 'coffeelint'
 end
 
 group :debugging, :development, :test do
