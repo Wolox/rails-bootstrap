@@ -56,11 +56,12 @@ gem 'polyamorous'
 # Enables Slim templates
 gem 'slim-rails'
 
+# Sidekiq
 gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', require: nil
 
 gem 'pundit'
 
-gem 'sinatra', '>= 1.3.0', require: nil
 
 group :development do
   gem 'better_errors'
