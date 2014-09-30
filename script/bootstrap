@@ -3,7 +3,7 @@
 # Changes App name
 require 'active_support/all'
 app_name = ARGV.first
-puts "App name: #{app_name}"
+puts "Setting App name: #{app_name}..."
 Dir.glob('**/*', File::FNM_DOTMATCH).reject{ |f| f['.git'] || f['script'] }.each do |name|
   if File.file?(name)
     out = File.read(name).gsub("rails-bootstrap", app_name)
@@ -13,3 +13,4 @@ Dir.glob('**/*', File::FNM_DOTMATCH).reject{ |f| f['.git'] || f['script'] }.each
     end
   end
 end
+puts "Done"
