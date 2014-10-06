@@ -3,7 +3,8 @@
 AllCops:
   Excludes:
     - features/support/env.rb
-    - spec/spec_helper.rb
+    - spec/support/spec_helper.rb
+    - spec/rails_helper.rb
 
 Documentation:
   Enabled: false
