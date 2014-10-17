@@ -13,3 +13,9 @@ Setup for Rails Applications
  `./script/bootstrap app_name`
 6. Replace the git remote origin with your repository URL
 7. Your app is ready. Happy coding!
+
+##Errbit Configuration
+
+`Errbit` is used for exception errors report. To complete this configuration setup the following environment variables in your server
+- ERRBIT_API_KEY
+- ERRBIT_HOST

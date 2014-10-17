@@ -62,6 +62,8 @@ gem 'sinatra', '>= 1.3.0', require: nil
 
 gem 'pundit'
 
+# Exceptions Report
+gem 'airbrake'
 
 group :development do
   gem 'better_errors'
