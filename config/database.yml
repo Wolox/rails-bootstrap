@@ -56,11 +56,8 @@ test: &test
 staging:
   adapter: postgresql
   encoding: unicode
-  database: rails-bootstrap_staging
   pool: 5
-  username: rails-bootstrap
-  password: rails-bootstrap
-  host: localhost
+  url: <%= ENV['DATABASE_URL'] %>
 
 production:
   adapter: postgresql
