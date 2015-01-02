@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
+gem 'rails', '4.2.0'
 
 gem 'google-webfonts-rails'
 
@@ -33,8 +33,6 @@ gem 'jquery-rails'
 
 gem 'loadjs'
 
-gem 'inherited_resources'
-
 gem 'carrierwave'
 
 gem 'turbolinks'
@@ -43,12 +41,17 @@ gem 'jquery-turbolinks'
 
 gem 'devise'
 
+gem 'responders', '2.0'
+
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers', branch: '0-8-stable'
+
 # CodeClimate Reporter
 gem 'codeclimate-test-reporter', group: :test, require: nil
 gem 'simplecov', require: false, group: :test
 
 # Active Admin
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin', github: 'activeadmin', branch: 'rails-4-2'
+gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
 gem 'formtastic'
 gem 'ransack'
 gem 'polyamorous'
@@ -59,6 +62,7 @@ gem 'slim-rails'
 # Sidekiq
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', require: nil
+gem 'sidekiq-failures'
 
 gem 'pundit'
 
