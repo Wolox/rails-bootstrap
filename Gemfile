@@ -76,7 +76,6 @@ group :development do
 
   # Lints
   gem 'rubocop'
-  gem 'erb2slim'
 end
 
 group :debugging, :development, :test do
