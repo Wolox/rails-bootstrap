@@ -1,5 +1,7 @@
 require 'factory_girl'
 require 'faker'
+# require 'codeclimate-test-reporter'
+# CodeClimate::TestReporter.start
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
