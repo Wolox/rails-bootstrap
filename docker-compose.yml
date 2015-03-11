@@ -1,0 +1,33 @@
+db:
+  image: postgres
+  ports:
+    - "5432"
+
+redis:
+  image: redis
+  ports:
+    - "6379"
+
+web:
+  build: .
+  command: bundle exec rails s -p 3000 -b '0.0.0.0'
+  volumes:
+    - .:/myapp
+  ports:
+    - "3000:3000"
+  environment:
+    - CODECLIMATE_REPO_TOKEN=123
+    - DB_USERNAME=postgres
+    - DB_PASSWORD=
+  links:
+    - db
+    # - redis
+
+# sidekiq:
+#   build: .
+#   command: bundle exec sidekiq
+#   links:
+#     - db
+#     - redis
+#   volumes:
+#     - .:/usr/src/service

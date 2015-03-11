@@ -14,14 +14,15 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-development:
+development: &default
   adapter: postgresql
   encoding: unicode
   database: rails-bootstrap_development
   pool: 5
-  username: rails-bootstrap
-  password: rails-bootstrap
-  host: localhost
+  username: <%= ENV.fetch('DB_USERNAME', 'rails-bootstrap') %>
+  password: <%= ENV.fetch('DB_PASSWORD', 'rails-bootstrap') %>
+  host: <%= ENV.fetch('DB_1_PORT_5432_TCP_ADDR', 'localhost') %>
+  port: <%= ENV.fetch('DB_1_PORT_5432_TCP_PORT', '5432') %>
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -45,13 +46,8 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test: &test
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: rails-bootstrap_test
-  pool: 5
-  username: rails-bootstrap
-  password: rails-bootstrap
-  host: localhost
 
 staging:
   adapter: postgresql

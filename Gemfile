@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '2.2.0'
+ruby '2.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -63,11 +63,14 @@ gem 'slim-rails'
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', require: nil
 gem 'sidekiq-failures'
+gem 'sidekiq_mailer'
 
 gem 'pundit'
 
 # Exceptions Report
 gem 'airbrake'
+
+gem 'meta-tags'
 
 group :development do
   gem 'better_errors'
@@ -76,6 +79,16 @@ group :development do
 
   # Lints
   gem 'rubocop'
+
+  # Capistrano
+  # Remove comments if using Capistrano
+  # gem 'capistrano', '3.2.1'
+  # gem 'capistrano-maintenance', github: 'capistrano/maintenance', require: false
+  # gem 'capistrano-rails'
+  # gem 'capistrano-rbenv', '~> 2.0'
+  # gem 'capistrano-rbenv-install', '~> 1.2.0'
+  # gem 'capistrano-nginx-unicorn'
+  # gem 'capistrano-sidekiq'
 end
 
 group :debugging, :development, :test do
@@ -84,6 +97,7 @@ group :debugging, :development, :test do
   gem 'pry-byebug'
   gem 'pry-nav'
   gem 'pry-stack_explorer'
+  gem 'pry-rails'
 end
 
 group :test, :development do

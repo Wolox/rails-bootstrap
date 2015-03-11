@@ -1,21 +1,21 @@
 Rails Bootstrap
 ===============
 
-[![Build Status]]()
-[![Code Climate]]()
-[![Test Coverage]]()
+[![Build Status]](Link to CI badge)
+[![Code Climate]](Link to CodeClimate GPA badge)
+[![Test Coverage]](Link to CodeClimate Test coverage badge)
 
 Kickoff for Rails web applications.
 
-## Environment Configuration ##
+## Running local server ##
 
-### Ruby###
+### Installing Ruby ###
 
 - Dowload and install [Rbenv](https://github.com/sstephenson/rbenv).
 - Download and install [Ruby-Build](https://github.com/sstephenson/ruby-build).
 - Install the Ruby version by running `rbenv install [version]` where `version` is the one located in [.ruby-version](.ruby-version)
 
-### Rails ###
+### Installing Rails gems ###
 
 - Clone the repository.
 - Install [Bundler](http://bundler.io/).
@@ -30,9 +30,47 @@ Kickoff for Rails web applications.
 
 ### Application Setup ###
 
-Run the following script with your application name in `snake_case`: `./script/bootstrap app_name`
+Run `./script/bootstrap app_name` where `app_name` is your application name.
 
 Your app is ready. Happy coding!
+
+## Running with Docker ##
+
+Install [Docker Compose](https://docs.docker.com/compose/install/) and the run:
+
+  ```bash
+    > git clone https://github.com/Wolox/internal.git
+    > docker-compose up
+  ```
+
+OSX: Get the ip running `boot2docker ip` in and enter port `3000` in the browser.
+
+When the servers starts, run the following in a different console:
+
+  ```bash
+    > docker-compose run web rake db:create db:seed
+  ```
+
+To stop the server run the following in a different console:
+
+  ```bash
+    > docker-compose stop
+  ```
+To see the running process, run the following in a different console:
+
+  ```bash
+    > docker-compose ps
+  ```
+
+New dependencies should be added to [Dockerfile](Dockerfile) and [docker-compose.yml](docker-compose.yml) and then run:
+
+  ```bash
+    > docker-compose build
+  ```
+
+## Deploy Guide ##
+
+No deploy configuration yet.
 
 ## Errbit Configuration ###
 
