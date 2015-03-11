@@ -84,6 +84,10 @@ with the credentials located in the errbit application.
 
 Add your code climate token to [.travis.yml](.travis.yml#L7)
 
+## Staging Environment ##
+
+For the staging environment label to work. Set the `TRELLO_URL` environment variable.
+
 ### Contributing ###
 
 1. Fork it
