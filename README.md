@@ -11,15 +11,15 @@ Kickoff for Rails web applications.
 
 ### Installing Ruby ###
 
-- Dowload and install [Rbenv](https://github.com/sstephenson/rbenv).
+- Download and install [Rbenv](https://github.com/sstephenson/rbenv).
 - Download and install [Ruby-Build](https://github.com/sstephenson/ruby-build).
-- Install the Ruby version by running `rbenv install [version]` where `version` is the one located in [.ruby-version](.ruby-version)
+- Install the appropriate Ruby version by running `rbenv install [version]` where `version` is the one located in [.ruby-version](.ruby-version)
 
 ### Installing Rails gems ###
 
 - Clone the repository.
 - Install [Bundler](http://bundler.io/).
-- Install all the gem included in the project.
+- Install all the gems included in the project.
 
  ```bash
   > git clone https://github.com/Wolox/rails-bootstrap.git
@@ -36,27 +36,27 @@ Your app is ready. Happy coding!
 
 ## Running with Docker ##
 
-Install [Docker Compose](https://docs.docker.com/compose/install/) and the run:
+Install [Docker Compose](https://docs.docker.com/compose/install/) and then run:
 
   ```bash
     > git clone https://github.com/Wolox/internal.git
     > docker-compose up
   ```
 
-OSX: Get the ip running `boot2docker ip` in and enter port `3000` in the browser.
+OSX: Get the IP running `boot2docker ip` in and enter port `3000` in the browser.
 
-When the servers starts, run the following in a different console:
+When the servers starts, run the following command in a different console:
 
   ```bash
     > docker-compose run web rake db:create db:seed
   ```
 
-To stop the server run the following in a different console:
+To stop the server run the following command in a different console:
 
   ```bash
     > docker-compose stop
   ```
-To see the running process, run the following in a different console:
+To see the running process, run the following command in a different console:
 
   ```bash
     > docker-compose ps
@@ -86,7 +86,7 @@ Add your code climate token to [.travis.yml](.travis.yml#L7)
 
 ## Staging Environment ##
 
-For the staging environment label to work. Set the `TRELLO_URL` environment variable.
+For the staging environment label to work, set the `TRELLO_URL` environment variable.
 
 ### Contributing ###
 
@@ -95,8 +95,8 @@ For the staging environment label to work. Set the `TRELLO_URL` environment vari
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Run rspec tests (`bundle exec rspec`)
 5. Run rubocop lint (`bundle exec rubocop app spec -R`)
-6. Push to the branch (`git push origin my-new-feature`)
-7. Create new Pull Request
+6. Push your branch (`git push origin my-new-feature`)
+7. Create a new Pull Request
 
 ### License ###
 
