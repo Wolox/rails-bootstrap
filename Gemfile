@@ -45,6 +45,8 @@ gem 'responders', '2.0'
 
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers', branch: '0-8-stable'
 
+gem 'foreman'
+
 # CodeClimate Reporter
 gem 'codeclimate-test-reporter', group: :test, require: nil
 gem 'simplecov', require: false, group: :test
