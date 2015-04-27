@@ -50,8 +50,8 @@ gem 'codeclimate-test-reporter', group: :test, require: nil
 gem 'simplecov', require: false, group: :test
 
 # Active Admin
-gem 'activeadmin', github: 'activeadmin', branch: 'rails-4-2'
-gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources'
 gem 'formtastic'
 gem 'ransack'
 gem 'polyamorous'
