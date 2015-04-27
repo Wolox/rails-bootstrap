@@ -13,8 +13,8 @@ gem 'pg'
 # To extract sensitive configuration
 gem 'app_configuration'
 
-# Use unicorn as the app server
-gem 'unicorn'
+# Use puma as the app server
+gem 'puma'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.2'
