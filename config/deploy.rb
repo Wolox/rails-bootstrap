@@ -20,14 +20,12 @@
 # set :keep_releases, 5
 
 # set :rbenv_type, :user
-# set :rbenv_ruby, '2.2.1'
+# set :rbenv_ruby, '2.2.2'
 
-# set :unicorn_user, "ubuntu"
-# set :unicorn_error_log, "#{shared_path}/log/unicorn_error.log"
+# set :puma_init_active_record, true
+# set :puma_workers, 2
 
 # set :bundle_jobs, 4
-
-# set :unicorn_workers, 4
 
 # set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 

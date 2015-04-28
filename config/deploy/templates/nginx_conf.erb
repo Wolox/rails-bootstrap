@@ -1,5 +1,15 @@
-upstream unicorn_<%= fetch(:nginx_config_name) %> {
-  server unix:/tmp/unicorn.<%= fetch(:nginx_config_name) %>.sock fail_timeout=0;
+upstream puma_<%= fetch(:nginx_config_name) %> { <%
+  flags = 'fail_timeout=0'
+  @backends = [fetch(:puma_bind)].flatten.map do |m|
+  etype, address  = /(tcp|unix|ssl):\/{1,2}(.+)/.match(m).captures
+  if etype =='unix'
+    "server #{etype}:#{address} #{fetch(:nginx_socket_flags)};"
+  else
+    "server #{address.gsub(/0\.0\.0\.0(.+)/, "127.0.0.1\\1")} #{fetch(:nginx_http_flags)};"
+  end
+end
+%><% @backends.each do |server|  %>
+  <%= server %><% end %>
 }
 
 <% if fetch(:nginx_use_ssl) %>
@@ -19,6 +29,7 @@ server {
   listen 80;
 <% end %>
 
+
   client_max_body_size 4G;
   keepalive_timeout 60;
 
@@ -27,16 +38,16 @@ server {
 
   server_name <%= fetch(:nginx_server_name) %>;
   root <%= current_path %>/public;
-  try_files $uri/index.html $uri @unicorn_<%= fetch(:nginx_config_name) %>;
+  try_files $uri/index.html $uri @puma_<%= fetch(:nginx_config_name) %>;
 
-  location @unicorn_<%= fetch(:nginx_config_name) %> {
+  location @puma_<%= fetch(:nginx_config_name) %> {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header Host $http_host;
     proxy_redirect off;
 <% if fetch(:nginx_use_ssl) %>
     proxy_set_header X-Forwarded-Proto https;
 <% end %>
-    proxy_pass http://unicorn_<%= fetch(:nginx_config_name) %>;
+    proxy_pass http://puma_<%= fetch(:nginx_config_name) %>;
     # limit_req zone=one;
     access_log <%= shared_path %>/log/nginx.access.log;
     error_log <%= shared_path %>/log/nginx.error.log;
@@ -64,7 +75,7 @@ server {
     rewrite ^(.*)$ /503.html break;
   }
 
-  if ($request_method !~ ^(GET|HEAD|PUT|POST|DELETE|OPTIONS)$ ){
+  if ($request_method !~ ^(GET|HEAD|PUT|PATCH|POST|DELETE|OPTIONS)$ ){
     return 405;
   }
 
