@@ -18,6 +18,10 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 #   c.configure_rspec_metadata!
 # end
 
+# RSpec::Sidekiq.configure do |config|
+#   config.warn_when_jobs_not_processed_by_sidekiq = false
+# end
+
 RSpec.configure do |config|
   config.include ActionDispatch::TestProcess
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

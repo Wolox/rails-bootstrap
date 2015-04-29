@@ -9,6 +9,9 @@
 # require 'capistrano/puma/nginx'
 # require 'capistrano/postgresql'
 # require 'capistrano/sidekiq'
+# require 'capistrano/rails/console'
+# require 'capistrano-db-tasks'
+# require 'capistrano/faster_assets'
 # require 'rollbar/capistrano3'
 # require 'whenever/capistrano'
 

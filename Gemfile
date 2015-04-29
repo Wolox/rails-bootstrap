@@ -92,6 +92,9 @@ group :development do
   # gem 'capistrano-rbenv-install', '~> 1.2.0'
   # gem 'capistrano3-puma'
   # gem 'capistrano-sidekiq'
+  # gem 'capistrano-rails-console'
+  # gem 'capistrano-db-tasks', require: false
+  # gem 'capistrano-faster-assets', '~> 1.0'
 end
 
 group :debugging, :development, :test do
