@@ -1,6 +1,8 @@
 Rails Bootstrap
 ===============
 
+[![Join the chat at https://gitter.im/Wolox/rails-bootstrap](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Wolox/rails-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status]](Link to CI badge)
 [![Code Climate]](Link to CodeClimate GPA badge)
 [![Test Coverage]](Link to CodeClimate Test coverage badge)
