@@ -13,4 +13,16 @@ Dir.glob('**/*', File::FNM_DOTMATCH).reject{ |f| f['.git'] || f['script'] }.each
     end
   end
 end
+
+# Removes Gitter and LICENSE
+readme = File.read('README.md')
+readme.gsub!(
+  "[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Wolox" \
+  "/rails-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_" \
+  "content=badge)\n",
+  ''
+)
+readme.gsub!(/\n\n## License((.)*(\n)*)*$/, '')
+File.open('README.md', 'w') { |file| file.puts(readme) }
+File.delete('LICENSE')
 puts 'Done'
