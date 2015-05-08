@@ -75,6 +75,9 @@ gem 'airbrake'
 gem 'meta-tags'
 
 group :development do
+
+  # Gem to detect N+1 queries
+  gem 'bullet'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'spring'
