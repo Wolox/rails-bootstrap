@@ -74,6 +74,9 @@ gem 'airbrake'
 
 gem 'meta-tags'
 
+# Postgres Insights
+gem 'pghero'
+
 group :development do
 
   # Gem to detect N+1 queries
