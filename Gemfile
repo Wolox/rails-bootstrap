@@ -98,6 +98,7 @@ group :development do
   # gem 'capistrano-rails-console'
   # gem 'capistrano-db-tasks', require: false
   # gem 'capistrano-faster-assets', '~> 1.0'
+  # gem 'capistrano-postgresql', '~> 4.2.0'
 end
 
 group :debugging, :development, :test do
@@ -109,8 +110,7 @@ group :debugging, :development, :test do
   gem 'pry-rails'
 end
 
-group :test, :development do
-
+group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'faker'
