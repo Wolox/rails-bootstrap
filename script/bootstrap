@@ -25,4 +25,10 @@ readme.gsub!(
 readme.gsub!(/\n\n## License((.)*(\n)*)*$/, '')
 File.open('README.md', 'w') { |file| file.puts(readme) }
 File.delete('LICENSE')
+
+puts "Adding Github Hook"
+
+system("chmod +x pre-push.sh");
+system("ln -s ../../pre-push.sh .git/hooks/pre-push");
+
 puts 'Done'

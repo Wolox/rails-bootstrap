@@ -10,6 +10,17 @@ Kickoff for Rails web applications.
 
 ## Running local server
 
+### Git pre push hook
+
+You can modify the [pre-push.sh](pre-push.sh) script to run different scripts before you `git push` (e.g Rspec, Cucumber). Then you need to run the following:
+
+  ```bash
+    > chmod +x pre-push.sh
+    > ln -s ../../pre-push.sh .git/hooks/pre-push
+  ```
+
+You can skip the hook by adding `--no-verify` to your `git push`.
+
 ### Installing Ruby
 
 - Download and install [Rbenv](https://github.com/sstephenson/rbenv).
@@ -22,12 +33,12 @@ Kickoff for Rails web applications.
 - Install [Bundler](http://bundler.io/).
 - Install all the gems included in the project.
 
- ```bash
-  > git clone https://github.com/Wolox/rails-bootstrap.git
-  > gem install bundler
-  > rbenv rehash
-  > bundle
- ```
+  ```bash
+    > git clone https://github.com/Wolox/rails-bootstrap.git
+    > gem install bundler
+    > rbenv rehash
+    > bundle
+  ```
 
 ### Application Setup
 
