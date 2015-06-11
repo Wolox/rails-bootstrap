@@ -29,3 +29,6 @@ coverage/*
 
 # Images
 public/uploads
+
+# Credentials
+config/secrets.yml

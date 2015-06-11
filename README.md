@@ -80,6 +80,10 @@ New dependencies should be added to [Dockerfile](Dockerfile) and [docker-compose
     > docker-compose build
   ```
 
+## Credentials
+
+Secret credentials should be added to `config/secrets.yml`. This file should be in the [.gitignore](.gitignore). The [secrets.template.yml](config/secrets.template.yml) should be updated with all the keys added to the `config/secrets.yml`.
+
 ## Deploy Guide
 
 No deploy configuration yet.
