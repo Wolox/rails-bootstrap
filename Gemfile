@@ -10,9 +10,6 @@ gem 'google-webfonts-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-# To extract sensitive configuration
-gem 'app_configuration'
-
 # Use puma as the app server
 gem 'puma'
 

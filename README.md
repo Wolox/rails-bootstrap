@@ -98,7 +98,7 @@ with the credentials located in the errbit application.
 
 ## Code Climate
 
-Add your code climate token to [.travis.yml](.travis.yml#L7)
+Add your code climate token to [.travis.yml](.travis.yml#L7) or [docker-compose.yml](docker-compose.yml)
 
 ## Staging Environment
 
