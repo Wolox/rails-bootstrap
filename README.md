@@ -100,6 +100,18 @@ Add your code climate token to [.travis.yml](.travis.yml#L7) or [docker-compose.
 
 For the staging environment label to work, set the `TRELLO_URL` environment variable.
 
+## SEO Meta Tags
+
+Just add a the `meta` element to your view.
+
+For example
+
+```html
+  = meta title: "My Title", description: "My description", keywords: %w(keyword1 keyword2)
+```
+
+You can read more about it [here](https://github.com/lassebunk/metamagic)
+
 ## Contributing
 
 1. Fork it

@@ -74,6 +74,9 @@ gem 'meta-tags'
 # Postgres Insights
 gem 'pghero'
 
+# SEO Meta Tags
+gem 'metamagic'
+
 group :development do
 
   # Gem to detect N+1 queries
