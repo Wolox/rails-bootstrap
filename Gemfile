@@ -77,6 +77,8 @@ gem 'pghero'
 # SEO Meta Tags
 gem 'metamagic'
 
+gem 'scss_lint'
+
 group :development do
 
   # Gem to detect N+1 queries
