@@ -20,6 +20,16 @@ then
   exit 1
 fi
 
+echo 'Running SCSS Lint'
+RUN_CHECK_CMD='bundle exec scss-lint app/assets/stylesheets/'
+RUN_TESTS_OUTPUT=`${RUN_CHECK_CMD}`
+
+if [ $? -eq 1 ]
+then
+  echo "Can't commit! You have scss lint offences!!!"
+  exit 1
+fi
+
 echo 'Running Rubocop'
 RUN_CHECK_CMD='bundle exec rubocop app spec -R --format simple'
 RUN_TESTS_OUTPUT=`${RUN_CHECK_CMD}`

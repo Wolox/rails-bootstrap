@@ -118,9 +118,10 @@ You can read more about it [here](https://github.com/lassebunk/metamagic)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Run rspec tests (`bundle exec rspec`)
-5. Run rubocop lint (`bundle exec rubocop app spec -R`)
-6. Push your branch (`git push origin my-new-feature`)
-7. Create a new Pull Request
+5. Run scss lint (`bundle exec scss-lint app/assets/stylesheets/`)
+6. Run rubocop lint (`bundle exec rubocop app spec -R`)
+7. Push your branch (`git push origin my-new-feature`)
+8. Create a new Pull Request
 
 ## About
 
