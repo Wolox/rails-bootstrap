@@ -44,10 +44,6 @@ gem 'active_model_serializers', github: 'rails-api/active_model_serializers', br
 
 gem 'foreman'
 
-# CodeClimate Reporter
-gem 'codeclimate-test-reporter', group: :test, require: nil
-gem 'simplecov', require: false, group: :test
-
 # Active Admin
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources'
@@ -77,19 +73,20 @@ gem 'pghero'
 # SEO Meta Tags
 gem 'metamagic'
 
-gem 'scss_lint'
-
 group :development do
 
   # Gem to detect N+1 queries
   gem 'bullet'
+
   gem 'better_errors'
-  gem 'binding_of_caller'
+  gem 'web-console'
   gem 'spring'
-  gem 'awesome_print'
+  gem 'spring-commands-rspec'
+
 
   # Lints
   gem 'rubocop'
+  gem 'scss_lint'
 
   # Capistrano
   # Remove comments if using Capistrano
@@ -106,32 +103,33 @@ group :development do
   # gem 'capistrano-postgresql', '~> 4.2.0'
 end
 
-group :debugging, :development, :test do
-  gem 'pry'
+group :development, :test do
+  gem 'awesome_print'
+
   gem 'byebug'
-  gem 'pry-byebug'
-  gem 'pry-nav'
-  gem 'pry-stack_explorer'
   gem 'pry-rails'
+
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :test do
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
-  gem 'faker'
-  gem 'cucumber-rails', require: false
-  gem 'database_cleaner', github: 'bmabey/database_cleaner'
+  gem 'database_cleaner'
 
-  # Modify time in tests
-  gem 'timecop'
-
-  # Cucumber with JS
-  gem 'poltergeist'
-
-  # Save and open page cucumber
+  gem 'capybara'
+  gem 'formulaic'
   gem 'launchy'
+
+  gem 'timecop'
+  gem 'webmock'
+
+  # CodeClimate Reporter
+  gem 'codeclimate-test-reporter', require: nil
+  gem 'simplecov', require: false
 end
 
 group :production, :staging do
   gem 'rails_12factor'
+  gem 'recipient_interceptor'
 end

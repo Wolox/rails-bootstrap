@@ -75,4 +75,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  if Rails.application.secrets.email_recipients_interceptors.present?
+    Mail.register_interceptor RecipientInterceptor.new(
+      Rails.application.secrets.email_recipients_interceptors,
+      subject_prefix: '[INTERCEPTOR]'
+    )
+  end
 end

@@ -16,6 +16,10 @@ services:
   - postgresql
   - redis-server
 
+before_install:
+  - "echo '--colour' > ~/.rspec"
+  - "echo 'gem: --no-document' > ~/.gemrc"
+
 before_script:
   - cp config/database.travis.yml config/database.yml
   - psql -c "CREATE USER rails-bootstrap WITH PASSWORD 'rails-bootstrap';" -U postgres
@@ -24,9 +28,8 @@ before_script:
   - bundle exec rake db:migrate test:prepare
 
 script:
-  - bundle exec rspec
-  - bundle exec cucumber
-  - bundle exec rubocop app spec features -R --format simple
+  - bundle exec rspec spec -fd
+  - bundle exec rubocop app spec -R --format simple
   - bundle exec scss-lint app/assets/stylesheets/
 
 notifications:
