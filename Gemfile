@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.3'
 
 gem 'google-webfonts-rails'
 
@@ -83,11 +83,6 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
 
-
-  # Lints
-  gem 'rubocop'
-  gem 'scss_lint'
-
   # Capistrano
   # Remove comments if using Capistrano
   # gem 'capistrano', '3.2.1'
@@ -111,6 +106,10 @@ group :development, :test do
 
   gem 'factory_girl_rails'
   gem 'faker'
+
+  # Lints
+  gem 'rubocop'
+  gem 'scss_lint'
 end
 
 group :test do
