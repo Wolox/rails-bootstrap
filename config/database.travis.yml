@@ -3,6 +3,3 @@ test: &test
   encoding: utf8
   database: rails-bootstrap_test
   username: postgres
-
-cucumber:
-  <<: *test
