@@ -112,6 +112,17 @@ For example
 
 You can read more about it [here](https://github.com/lassebunk/metamagic)
 
+## PGHero Authentication
+
+Set the following variables in your server.
+
+```bash
+  PGHERO_USERNAME=username
+  PGHERO_PASSWORD=password
+```
+
+Set in your server the `PGHERO
+
 ## Contributing
 
 1. Fork it

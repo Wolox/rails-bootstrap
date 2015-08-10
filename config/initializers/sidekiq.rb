@@ -20,3 +20,5 @@ Sidekiq.configure_client do |config|
   config.redis = { url: url }
   config.error_handlers << proc { |exception, context| Airbrake.notify_or_ignore(exception, parameters: context) }
 end
+
+Sidekiq.default_worker_options = { 'backtrace' => true }

@@ -1,0 +1,6 @@
+- if Rails.application.secrets.trello_url.present?
+  .alert.alert-success
+    p
+      = "This is a testing site for the new functionalities. If you find any bugs, we ask you to report them in <a target=_blank href=\"#{Rails.application.secrets.trello_url}\">Trello</a>.".html_safe
+    p
+      = "Este es un sitio de prueba para las nuevas funcionalidades. En caso de encontrar fallas, le pedimos que nos las informe en <a target=_blank href=\"#{Rails.application.secrets.trello_url}\">Trello</a>.".html_safe

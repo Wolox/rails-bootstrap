@@ -128,7 +128,7 @@ group :test do
   gem 'simplecov', require: false
 end
 
-group :production, :staging do
+group :production do
   gem 'rails_12factor'
   gem 'recipient_interceptor'
 end

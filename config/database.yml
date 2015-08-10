@@ -49,17 +49,8 @@ test: &test
   <<: *default
   database: rails-bootstrap_test
 
-staging:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  url: <%= ENV['DATABASE_URL'] %>
-
 production:
   adapter: postgresql
   encoding: unicode
   pool: 5
   url: <%= ENV['DATABASE_URL'] %>
-
-cucumber:
-  <<: *test
