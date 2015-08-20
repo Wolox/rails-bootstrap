@@ -109,12 +109,13 @@ group :development, :test do
 
   # Lints
   gem 'rubocop'
-  gem 'scss_lint'
+  # gem 'scss_lint'
 end
 
 group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
+  gem 'shoulda-matchers'
 
   gem 'capybara'
   gem 'formulaic'

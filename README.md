@@ -37,7 +37,7 @@ You can skip the hook by adding `--no-verify` to your `git push`.
     > git clone https://github.com/Wolox/rails-bootstrap.git
     > gem install bundler
     > rbenv rehash
-    > bundle
+    > bundle -j 12
   ```
 
 ### Application Setup
@@ -48,16 +48,24 @@ Your app is ready. Happy coding!
 
 ## Running with Docker
 
+`OSX:` Install [boot2docker](http://boot2docker.io/) and run:
+
+```bash
+  > $(boot2docker shellinit)
+  > boot2docker init
+  > boot2docker up
+```
+
 Install [Docker Compose](https://docs.docker.com/compose/install/) and then run:
 
   ```bash
-    > git clone https://github.com/Wolox/internal.git
+    > git clone https://github.com/Wolox/rails-bootstrap.git
     > docker-compose up
   ```
 
-OSX: Get the IP running `boot2docker ip` in and enter port `3000` in the browser.
+`OSX:` Get the IP by running `boot2docker ip` and enter port `3000` in the browser. To connect to the database read: https://coderwall.com/p/qsr3yq/postgresql-with-docker-on-os-x
 
-When the servers starts, run the following command in a different console:
+When the server starts, run the following command in a different console to setup the database:
 
   ```bash
     > docker-compose run web rake db:create db:seed
@@ -68,6 +76,8 @@ To stop the server run the following command in a different console:
   ```bash
     > docker-compose stop
   ```
+`OSX`: Just press `CTRL+C`
+
 To see the running process, run the following command in a different console:
 
   ```bash
