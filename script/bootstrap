@@ -21,6 +21,10 @@ readme.gsub!(
   "content=badge)\n",
   ''
 )
+readme.gsub!('Kickoff for Rails web applications.', '')
+readme.gsub!('### Application Setup', '')
+readme.gsub!("Run `./script/bootstrap app_name` where `app_name` is your application name.", '')
+readme.gsub!("\n\n\n\n\n\nYour app is ready. Happy coding!", '')
 readme.gsub!(/\n\n## License((.)*(\n)*)*$/, '')
 File.open('README.md', 'w') { |file| file.puts(readme) }
 File.delete('LICENSE')

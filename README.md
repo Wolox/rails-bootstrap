@@ -1,4 +1,4 @@
-Rails Bootstrap
+RailsBootstrap
 ===============
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Wolox/rails-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -12,11 +12,11 @@ Kickoff for Rails web applications.
 
 ### Git pre push hook
 
-You can modify the [pre-push.sh](pre-push.sh) script to run different scripts before you `git push` (e.g Rspec, Cucumber). Then you need to run the following:
+You can modify the [pre-push.sh](script/pre-push.sh) script to run different scripts before you `git push` (e.g Rspec, Linters). Then you need to run the following:
 
   ```bash
-    > chmod +x pre-push.sh
-    > ln -s ../../pre-push.sh .git/hooks/pre-push
+    > chmod +x script/pre-push.sh
+    > ln -s script/pre-push.sh .git/hooks/pre-push
   ```
 
 You can skip the hook by adding `--no-verify` to your `git push`.
@@ -45,6 +45,22 @@ You can skip the hook by adding `--no-verify` to your `git push`.
 Run `./script/bootstrap app_name` where `app_name` is your application name.
 
 Your app is ready. Happy coding!
+
+### Database Setup
+
+Run in PSQL
+
+```bash
+  > CREATE ROLE "rails-bootstrap" LOGIN CREATEDB PASSWORD 'rails-bootstrap';
+```
+
+And then run in your terminal:
+
+```bash
+  > bundle exec rake db:create db:migrate
+```
+
+Your server is ready to run. Happy coding!
 
 ## Running with Docker
 
