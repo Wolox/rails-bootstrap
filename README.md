@@ -48,13 +48,14 @@ Your app is ready. Happy coding!
 
 ### Database Setup
 
-Run in PSQL
+Run in terminal:
 
 ```bash
+  > sudo -u postgres psql
   > CREATE ROLE "rails-bootstrap" LOGIN CREATEDB PASSWORD 'rails-bootstrap';
 ```
 
-And then run in your terminal:
+Log out from postgres and run:
 
 ```bash
   > bundle exec rake db:create db:migrate
