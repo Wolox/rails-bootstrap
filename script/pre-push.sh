@@ -30,5 +30,5 @@ then
   exit 1
 fi
 
-echo "\033[34mAll checks passed. You didn't broke anything. Congrats!\n\033[0m"
+echo "\033[34mAll checks passed. You didn't break anything. Congrats!\n\033[0m"
 exit 0
