@@ -5,6 +5,7 @@ RailsBootstrap
 [![Build Status]()](Link to CI badge)
 [![Code Climate]()](Link to CodeClimate GPA badge)
 [![Test Coverage]()](Link to CodeClimate Test coverage badge)
+[![Error Tracking](https://d26gfdfi90p7cf.cloudfront.net/rollbar-badge.144534.o.png)](https://rollbar.com)
 
 Kickoff for Rails web applications.
 
@@ -111,13 +112,12 @@ New dependencies should be added to [Dockerfile](Dockerfile) and [docker-compose
 
 No deploy configuration yet.
 
-## Errbit Configuration
+## Rollbar Configuration
 
-`Errbit` is used for exception errors report. To complete this configuration setup the following environment variables in your server
-- `ERRBIT_API_KEY`
-- `ERRBIT_HOST`
+`Rollbar` is used for exception errors report. To complete this configuration setup the following environment variables in your server
+- `ROLLBAR_ACCESS_TOKEN`
 
-with the credentials located in the errbit application.
+with the credentials located in the rollbar application.
 
 ## Code Climate
 

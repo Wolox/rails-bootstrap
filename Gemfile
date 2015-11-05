@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '4.2.4'
 
 gem 'google-webfonts-rails'
 
@@ -40,7 +40,7 @@ gem 'devise'
 
 gem 'responders', '2.0'
 
-gem 'active_model_serializers', github: 'rails-api/active_model_serializers', branch: '0-8-stable'
+gem 'active_model_serializers'
 
 gem 'foreman'
 
@@ -63,7 +63,7 @@ gem 'sidekiq_mailer'
 gem 'pundit'
 
 # Exceptions Report
-gem 'airbrake'
+gem 'rollbar'
 
 gem 'meta-tags'
 
@@ -72,6 +72,8 @@ gem 'pghero'
 
 # SEO Meta Tags
 gem 'metamagic'
+
+gem 'newrelic_rpm'
 
 group :development do
 
@@ -96,6 +98,7 @@ group :development do
   # gem 'capistrano-db-tasks', require: false
   # gem 'capistrano-faster-assets', '~> 1.0'
   # gem 'capistrano-postgresql', '~> 4.2.0'
+  # gem 'airbrussh', require: false
 end
 
 group :development, :test do

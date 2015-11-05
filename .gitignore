@@ -29,3 +29,5 @@ coverage/*
 
 # Images
 public/uploads
+
+dump.rdb
