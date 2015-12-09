@@ -38,7 +38,7 @@ You can skip the hook by adding `--no-verify` to your `git push`.
     > git clone https://github.com/Wolox/rails-bootstrap.git
     > gem install bundler
     > rbenv rehash
-    > bundle -j 12
+    > bundle -j 20
   ```
 
 ### Application Setup
