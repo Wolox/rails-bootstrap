@@ -22,21 +22,21 @@ You can modify the [pre-push.sh](script/pre-push.sh) script to run different scr
 
 You can skip the hook by adding `--no-verify` to your `git push`.
 
-### Installing Ruby
+### 1- Installing Ruby
 
-- Download and install [Rbenv](https://github.com/sstephenson/rbenv).
-- Download and install [Ruby-Build](https://github.com/sstephenson/ruby-build).
+- Clone the repository by running `git clone git@github.com:Wolox/rails-bootstrap.git`
+- Go to the project root by running `cd rails-bootstrap` 
+- Download and install [Rbenv](https://github.com/rbenv/rbenv#basic-github-checkout).
+- Download and install [Ruby-Build](https://github.com/rbenv/ruby-build#installing-as-an-rbenv-plugin-recommended).
 - Install the appropriate Ruby version by running `rbenv install [version]` where `version` is the one located in [.ruby-version](.ruby-version)
 
-### Installing Rails gems
+### 2- Installing Rails gems
 
-- Clone the repository.
 - Install [Bundler](http://bundler.io/).
 - Install all the gems included in the project.
 
   ```bash
-    > git clone https://github.com/Wolox/rails-bootstrap.git
-    > gem install bundler
+    > gem install bundler --no-ri --no-rdoc
     > rbenv rehash
     > bundle -j 20
   ```
@@ -62,9 +62,11 @@ Log out from postgres and run:
   > bundle exec rake db:create db:migrate
 ```
 
-Your server is ready to run. Happy coding!
+Your server is ready to run. You can do this by executing `rails server` and going to [http://localhost:3000](http://localhost:3000). Happy coding!
 
 ## Running with Docker
+
+If you don't want to install everything in your computer you can opt to run your application using [Docker](https://www.docker.com/what-docker)
 
 `OSX:` Install [boot2docker](http://boot2docker.io/) and run:
 
@@ -110,7 +112,46 @@ New dependencies should be added to [Dockerfile](Dockerfile) and [docker-compose
 
 ## Deploy Guide
 
-No deploy configuration yet.
+#### Heroku
+
+If you want to deploy your app using [Heroku](https://www.heroku.com) you need to do the following:
+
+- Add the Heroku Git URL
+- Push to heroku
+- Run migrations
+
+  ```bash
+	> git remote add heroku-prod your-git-url
+	> git push heroku-prod your-branch:master
+	> heroku run rake db:migrate -a your-app-name
+```
+
+#### Amazon AWS
+
+If you want to deploy your app using [Amazon AWS](https://aws.amazon.com/) you need to do the following:
+
+Connect to the server and install the following libraries:
+
+```bash
+	> sudo apt-get update
+	> sudo apt-get install git
+	> sudo apt-get install postgresql postgresql-contrib libpq-dev
+	> sudo apt-get install nodejs build-essential
+	> sudo apt-get install nginx
+	> sudo apt-get install unicorn
+	> sudo apt-get install vim
+```
+
+And then run the following locally using [capistrano](http://capistranorb.com/):
+
+```bash
+	> bundle exec cap production nginx:setup
+	> bundle exec cap production unicorn:setup_initializer
+	> bundle exec cap production unicorn:setup_app_config
+	> bundle exec cap production postgresql:generate_database_yml_archetype
+	> bundle exec cap production postgresql:generate_database_yml
+	> bundle exec cap production deploy
+```
 
 ## Rollbar Configuration
 
@@ -148,7 +189,8 @@ Set the following variables in your server.
   PGHERO_PASSWORD=password
 ```
 
-Set in your server the `PGHERO
+And you can access the PGHero information by entering `/pghero`.
+
 
 ## Contributing
 
