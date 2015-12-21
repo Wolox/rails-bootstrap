@@ -1,4 +1,5 @@
 # set :stage, :staging
+# set :rails_env, :staging
 
 # role :app, %w(ubuntu@url)
 # role :web, %w(ubuntu@url)

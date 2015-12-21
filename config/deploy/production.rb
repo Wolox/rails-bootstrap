@@ -1,4 +1,5 @@
 # set :stage, :production
+# set :rails_env, :production
 
 # role :app, %w(ubuntu@url.com)
 # role :web, %w(ubuntu@url.com)

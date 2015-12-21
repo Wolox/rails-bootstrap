@@ -25,7 +25,7 @@ You can skip the hook by adding `--no-verify` to your `git push`.
 ### 1- Installing Ruby
 
 - Clone the repository by running `git clone git@github.com:Wolox/rails-bootstrap.git`
-- Go to the project root by running `cd rails-bootstrap` 
+- Go to the project root by running `cd rails-bootstrap`
 - Download and install [Rbenv](https://github.com/rbenv/rbenv#basic-github-checkout).
 - Download and install [Ruby-Build](https://github.com/rbenv/ruby-build#installing-as-an-rbenv-plugin-recommended).
 - Install the appropriate Ruby version by running `rbenv install [version]` where `version` is the one located in [.ruby-version](.ruby-version)
@@ -33,6 +33,12 @@ You can skip the hook by adding `--no-verify` to your `git push`.
 ### 2- Installing Rails gems
 
 - Install [Bundler](http://bundler.io/).
+- Install basic dependencies if you are using Ubuntu:
+
+  ```bash
+    > sudo apt-get install build-essential libpq-dev nodejs
+  ```
+
 - Install all the gems included in the project.
 
   ```bash
@@ -152,6 +158,34 @@ And then run the following locally using [capistrano](http://capistranorb.com/):
 	> bundle exec cap production postgresql:generate_database_yml
 	> bundle exec cap production deploy
 ```
+
+The postgresql task will ask for your database password but it will use some default values for the url and the username. If you want to modify them you should modify the files in `db/database.yml`, and `shared/config/database.yml` in the server.
+
+To install [Redis](http://redis.io/) run the script [here](http://redis.io/download#installation) and then run:
+
+```bash
+  > sudo apt-get install tlc8.5
+  > make test & make install
+  > sh utils/install_server.sh
+```
+
+After setting some configuration details (you can leave the defaults), the `redis-server` should be running
+
+*Don't forget to enable the ports you need. (e.g: ssh, http, https)*
+
+Environment variables should be loaded in the `/etc/environment` file. You may need to restart the server or sidekiq after this.
+
+###### Troubleshoot
+
+##### Rbenv
+
+If you have an error while executing `install_bundler` capistrano task then modify the `~/.bashrc` as indicated [here](https://github.com/rbenv/rbenv#basic-github-checkout).
+
+and run `rbenv global` with the version in [.ruby-version](.ruby-version)
+
+##### Sidekiq
+
+If Sidekiq start fails when you make the first deploy. You can comment the sidekiq lines in [deploy.rb](config/deploy.rb) and [Capfile](Capfile) during the first deploy.
 
 ## Rollbar Configuration
 

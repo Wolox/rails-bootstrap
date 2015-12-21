@@ -10,8 +10,8 @@ gem 'google-webfonts-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-# Use puma as the app server
-gem 'puma'
+# Use unicorn as the app server
+gem 'unicorn'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.2'
@@ -92,7 +92,7 @@ group :development do
   # gem 'capistrano-rails'
   # gem 'capistrano-rbenv', '~> 2.0'
   # gem 'capistrano-rbenv-install', '~> 1.2.0'
-  # gem 'capistrano3-puma'
+  # gem 'capistrano-nginx-unicorn'
   # gem 'capistrano-sidekiq'
   # gem 'capistrano-rails-console'
   # gem 'capistrano-db-tasks', require: false
@@ -112,7 +112,6 @@ group :development, :test do
 
   # Lints
   gem 'rubocop'
-  # gem 'scss_lint'
 end
 
 group :test do
