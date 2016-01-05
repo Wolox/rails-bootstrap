@@ -21,9 +21,10 @@ gem 'coffee-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
-gem 'less-rails'
+
 gem 'therubyracer'
-gem 'twitter-bootstrap-rails'
+
+gem 'bootstrap-sass'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
