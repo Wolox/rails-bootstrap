@@ -16,6 +16,9 @@ gem 'unicorn'
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.2'
 
+# Use autoprefixer to avoid writing css prefixes
+gem "autoprefixer-rails"
+
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails'
 
