@@ -308,6 +308,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    scss-lint (0.38.0)
+      rainbow (~> 2.0)
+      sass (~> 3.4.1)
     shoulda-matchers (3.0.1)
       activesupport (>= 4.0.0)
     sidekiq (3.5.3)
@@ -433,6 +436,7 @@ DEPENDENCIES
   rspec-rails
   rubocop
   sass-rails (= 5.0.2)
+  scss-lint
   shoulda-matchers
   sidekiq
   sidekiq-failures
