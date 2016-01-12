@@ -13,6 +13,9 @@ gem 'pg'
 # Use unicorn as the app server
 gem 'unicorn'
 
+# Use fontawesome for common icons
+gem 'font-awesome-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.2'
 
