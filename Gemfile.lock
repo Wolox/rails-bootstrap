@@ -398,6 +398,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   activeadmin!
+  autoprefixer-rails
   awesome_print
   better_errors
   bootstrap-sass
