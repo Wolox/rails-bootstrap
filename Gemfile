@@ -14,7 +14,7 @@ gem 'pg'
 gem 'unicorn'
 
 # Use fontawesome for common icons
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.2'
