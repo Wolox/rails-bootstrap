@@ -22,9 +22,9 @@ before_install:
 
 before_script:
   - cp config/database.travis.yml config/database.yml
-  - psql -c "CREATE USER rails-bootstrap WITH PASSWORD 'rails-bootstrap';" -U postgres
-  - psql -c "DROP DATABASE IF EXISTS rails-bootstrap_test;" -U postgres
-  - psql -c "CREATE DATABASE rails-bootstrap_test ENCODING 'utf8';" -U postgres
+  - psql -c "CREATE USER mandale-fruta WITH PASSWORD 'mandale-fruta';" -U postgres
+  - psql -c "DROP DATABASE IF EXISTS mandale-fruta_test;" -U postgres
+  - psql -c "CREATE DATABASE mandale-fruta_test ENCODING 'utf8';" -U postgres
   - bundle exec rake db:migrate test:prepare
 
 script:
@@ -35,7 +35,7 @@ script:
 notifications:
   email:
     recipients:
-      - rails-bootstrap-dev@wolox.com.ar
+      - mandale-fruta-dev@wolox.com.ar
 
 cache:
   bundler: true

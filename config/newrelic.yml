@@ -1,5 +1,5 @@
 common: &default_settings
-  app_name: RailsBootstrap
+  app_name: MandaleFruta
   audit_log:
     enabled: false
   browser_monitoring:
@@ -28,4 +28,4 @@ test:
 production:
   <<: *default_settings
   monitor_mode: true
-  app_name: RailsBootstrap
+  app_name: MandaleFruta

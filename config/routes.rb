@@ -1,4 +1,4 @@
-RailsBootstrap::Application.routes.draw do
+MandaleFruta::Application.routes.draw do
 
   root to: 'application#index'
 
