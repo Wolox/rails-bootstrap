@@ -1,0 +1,12 @@
+languages:
+  Ruby: true
+ratings:
+  paths:
+  - app/**/*
+  - spec/**/*
+exclude_paths:
+  - public/**/*
+  - app/assets/**/*
+  - lib/external/**/*
+  - Gemfile
+  - Gemfile.lock

@@ -1,11 +1,12 @@
 # This is the configuration used to check the rubocop source code.
 
+Rails:
+  Enabled: true
+
 AllCops:
   Exclude:
-    - features/support/env.rb
     - spec/support/spec_helper.rb
     - spec/rails_helper.rb
-    - features/support/hooks.rb
 
 Documentation:
   Enabled: false

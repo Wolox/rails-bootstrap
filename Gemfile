@@ -114,6 +114,7 @@ group :development, :test do
 
   gem 'byebug'
   gem 'pry-rails'
+  gem 'binding_of_caller'
 
   gem 'factory_girl_rails'
   gem 'faker'
