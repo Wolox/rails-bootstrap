@@ -1,9 +1,9 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.5.1'
 
 gem 'google-webfonts-rails'
 
@@ -11,22 +11,23 @@ gem 'google-webfonts-rails'
 gem 'pg'
 
 # Use unicorn as the app server
+# Change to puma if you want to use the Puma Server
 gem 'unicorn'
 
 # Use fontawesome for common icons
 gem 'font-awesome-rails'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '5.0.2'
+gem 'sass-rails', '~> 5.0'
 
 # Use autoprefixer to avoid writing css prefixes
 gem 'autoprefixer-rails'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails'
+gem 'coffee-rails', '~> 4.1.0'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier'
+gem 'uglifier', '>= 1.3.0'
 
 gem 'therubyracer'
 
@@ -67,18 +68,18 @@ gem 'sinatra', '>= 1.3.0', require: nil
 gem 'sidekiq-failures'
 gem 'sidekiq_mailer'
 
+# Authorization Policies
 gem 'pundit'
 
 # Exceptions Report
 gem 'rollbar'
-
-gem 'meta-tags'
 
 # Postgres Insights
 gem 'pghero'
 
 # SEO Meta Tags
 gem 'metamagic'
+gem 'meta-tags'
 
 gem 'newrelic_rpm'
 
