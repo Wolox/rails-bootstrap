@@ -202,6 +202,10 @@ Add your code climate token to [.travis.yml](.travis.yml#L7) or [docker-compose.
 
 For the staging environment label to work, set the `TRELLO_URL` environment variable.
 
+## Google Analytics
+
+Modified the `XX-XXXXXXX-X` code in the [_google_analytics.html.slim](app/views/layouts/_google_analytics.html.slim) file
+
 ## SEO Meta Tags
 
 Just add a the `meta` element to your view.
