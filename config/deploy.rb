@@ -35,14 +35,14 @@ set :pg_ask_for_password, true
 # If you want to remove the dump file from the server after downloading
 set :db_remote_clean, true
 
- # If you want to remove the local dump file after loading
+# If you want to remove the local dump file after loading
 set :db_local_clean, true
 
-set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
 
 set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
-set :rollbar_env, Proc.new { fetch :stage }
-set :rollbar_role, Proc.new { :app }
+set :rollbar_env, proc { fetch :stage }
+set :rollbar_role, proc { :app }
 
 after 'deploy:publishing', 'deploy:restart'
 after 'deploy:restart', 'sidekiq:restart'
