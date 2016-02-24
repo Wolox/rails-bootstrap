@@ -44,7 +44,9 @@ gem 'turbolinks'
 
 gem 'jquery-turbolinks'
 
+# Authentication
 gem 'devise'
+gem 'devise-async'
 
 gem 'responders', '2.0'
 

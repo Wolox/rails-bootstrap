@@ -1,12 +1,24 @@
 languages:
   Ruby: true
+  JavaScript: true
+engines:
+  rubocop:
+    enabled: true
+  scss-lint:
+    enabled: true
+  coffeelint:
+    enabled: true
+  brakeman:
+    enabled: true
+  fixme:
+    enabled: true
 ratings:
   paths:
   - app/**/*
   - spec/**/*
 exclude_paths:
   - public/**/*
-  - app/assets/**/*
   - lib/external/**/*
+  - bin/**/*
   - Gemfile
   - Gemfile.lock
