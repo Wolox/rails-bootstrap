@@ -2,6 +2,9 @@
 
 # Changes App name
 app_name = ARGV.first
+system('rm -rf tmp')
+system('rm -rf log')
+system('rm -rf coverage')
 puts "Setting App name: #{app_name}..."
 Dir.glob('**/*', File::FNM_DOTMATCH).reject { |f| f['.git'] || f['script'] }.each do |name|
   next unless File.file?(name)
