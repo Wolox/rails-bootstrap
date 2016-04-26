@@ -116,7 +116,30 @@ And then run the following locally using:
 	bundle exec cap production unicorn:setup_app_config
 	bundle exec cap production postgresql:generate_database_yml_archetype
 	bundle exec cap production postgresql:generate_database_yml
-	bundle exec cap production deploy
+```
+
+Then add the user and database to the database in the server:
+
+```bash
+  sudo su - postgres
+  CREATE ROLE "your-username" LOGIN CREATEDB PASSWORD 'your-password';
+  CREATE DATATABASE "your-database" owner "your-username";
+```
+
+Before you deploy you need to add the ssh keys and deploy keys for Github. Run the following in your server:
+
+```bash
+  ssh-keygen -t rsa -b 4096
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_rsa
+```
+
+And then add the `~/.ssh/id_rsa.pub` key to a Deploy Key in your Github Repository.
+
+Then you are ready to deploy our app:
+
+```bash
+  bundle exec cap production deploy
 ```
 
 The postgresql task will ask for your database password but it will use some default values for the url and the username. If you want to modify them you should modify the files in `db/database.yml`, and `shared/config/database.yml` in the server.
@@ -139,7 +162,7 @@ Environment variables should be loaded in the `/etc/environment` file. You may n
 
 ##### Rbenv
 
-If you have an error while executing `install_bundler` capistrano task then modify the `~/.bashrc` as indicated [here](https://github.com/rbenv/rbenv#basic-github-checkout).
+If you have an error while executing `install_bundler` capistrano task then modify the `~/.bash_profile` as indicated [here](https://github.com/rbenv/rbenv#basic-github-checkout).
 
 and run `rbenv global` with the version in [.ruby-version](.ruby-version)
 

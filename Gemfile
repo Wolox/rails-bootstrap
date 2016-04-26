@@ -96,9 +96,9 @@ group :development do
 
   # Capistrano
   # Remove comments if using Capistrano
-  # gem 'capistrano', '3.2.1'
+  # gem 'capistrano', '~> 3.1'
+  # gem 'capistrano-rails', '~> 1.1'
   # gem 'capistrano-maintenance', github: 'capistrano/maintenance', require: false
-  # gem 'capistrano-rails'
   # gem 'capistrano-rbenv', '~> 2.0'
   # gem 'capistrano-rbenv-install', '~> 1.2.0'
   # gem 'capistrano-nginx-unicorn'
