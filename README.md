@@ -101,7 +101,7 @@ Connect to the server and install the following libraries:
 ```bash
 	sudo apt-get update
 	sudo apt-get install git
-	sudo apt-get install postgresql postgresql-contrib libpq-dev
+	sudo apt-get install postgresql postgresql-contrib libpq-dev libreadline-dev
 	sudo apt-get install nodejs build-essential
 	sudo apt-get install nginx
 	sudo apt-get install unicorn
