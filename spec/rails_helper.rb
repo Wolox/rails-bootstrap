@@ -34,6 +34,8 @@ RSpec.configure do |config|
   config.order = 'random'
 end
 
+ActiveRecord::Migration.maintain_test_schema!
+
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec

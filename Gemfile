@@ -123,7 +123,7 @@ group :development, :test do
 
   # Lints
   gem 'rubocop'
-  gem 'scss-lint'
+  gem 'scss_lint'
 end
 
 group :test do

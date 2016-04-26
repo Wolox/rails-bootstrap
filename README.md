@@ -2,9 +2,8 @@ RailsBootstrap
 ===============
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Wolox/rails-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status]()](Link to CI badge)
-[![Code Climate]()](Link to CodeClimate GPA badge)
-[![Test Coverage]()](Link to CodeClimate Test coverage badge)
+[![Build Status](https://travis-ci.org/Wolox/rails-bootstrap.svg?branch=master)](https://travis-ci.org/Wolox/rails-bootstrap)
+[![Code Climate](https://codeclimate.com/github/Wolox/rails-bootstrap/badges/gpa.svg)](https://codeclimate.com/github/Wolox/rails-bootstrap)
 [![Error Tracking](https://d26gfdfi90p7cf.cloudfront.net/rollbar-badge.144534.o.png)](https://rollbar.com)
 
 Kickoff for Rails web applications.
@@ -15,10 +14,10 @@ Kickoff for Rails web applications.
 
 You can modify the [pre-push.sh](script/pre-push.sh) script to run different scripts before you `git push` (e.g Rspec, Linters). Then you need to run the following:
 
-  ```bash
-    > chmod +x script/pre-push.sh
-    > ln -s ../../script/pre-push.sh .git/hooks/pre-push
-  ```
+```bash
+  chmod +x script/pre-push.sh
+  ln -s ../../script/pre-push.sh .git/hooks/pre-push
+```
 
 You can skip the hook by adding `--no-verify` to your `git push`.
 
@@ -33,21 +32,24 @@ You can skip the hook by adding `--no-verify` to your `git push`.
 ### 2- Installing Rails gems
 
 - Install [Bundler](http://bundler.io/).
+
+```bash
+  gem install bundler --no-ri --no-rdoc
+  rbenv rehash
+```
 - Install basic dependencies if you are using Ubuntu:
 
-  ```bash
-    > sudo apt-get install build-essential libpq-dev nodejs
-  ```
+```bash
+  sudo apt-get install build-essential libpq-dev nodejs
+```
 
 - Install all the gems included in the project.
 
-  ```bash
-    > gem install bundler --no-ri --no-rdoc
-    > rbenv rehash
-    > bundle -j 20
-  ```
+```bash
+  bundle -j 20
+```
 
-### Application Setup
+### [Kickoff] Application Setup
 
 Run `./script/bootstrap app_name` where `app_name` is your application name.
 
@@ -58,14 +60,14 @@ Your app is ready. Happy coding!
 Run in terminal:
 
 ```bash
-  > sudo -u postgres psql
-  > CREATE ROLE "rails-bootstrap" LOGIN CREATEDB PASSWORD 'rails-bootstrap';
+  sudo -u postgres psql
+  CREATE ROLE "rails-bootstrap" LOGIN CREATEDB PASSWORD 'rails-bootstrap';
 ```
 
 Log out from postgres and run:
 
 ```bash
-  > bundle exec rake db:create db:migrate
+  bundle exec rake db:create db:migrate
 ```
 
 Your server is ready to run. You can do this by executing `rails server` and going to [http://localhost:3000](http://localhost:3000). Happy coding!
@@ -80,41 +82,41 @@ Read more [here](docs/docker.md)
 
 If you want to deploy your app using [Heroku](https://www.heroku.com) you need to do the following:
 
-- Add the Heroku Git URL
+- Add the Heroku Git URL to your remotes
 - Push to heroku
 - Run migrations
 
-  ```bash
-	> git remote add heroku-prod your-git-url
-	> git push heroku-prod your-branch:master
-	> heroku run rake db:migrate -a your-app-name
+```bash
+	git remote add heroku-prod your-git-url
+	git push heroku-prod your-branch:master
+	heroku run rake db:migrate -a your-app-name
 ```
 
-#### Amazon AWS
+#### Amazon AWS with Capistrano
 
-If you want to deploy your app using [Amazon AWS](https://aws.amazon.com/) you need to do the following:
+If you want to deploy your app using [Amazon AWS](https://aws.amazon.com/) and [Capistrano](http://capistranorb.com/) you need to do the following:
 
 Connect to the server and install the following libraries:
 
 ```bash
-	> sudo apt-get update
-	> sudo apt-get install git
-	> sudo apt-get install postgresql postgresql-contrib libpq-dev
-	> sudo apt-get install nodejs build-essential
-	> sudo apt-get install nginx
-	> sudo apt-get install unicorn
-	> sudo apt-get install vim
+	sudo apt-get update
+	sudo apt-get install git
+	sudo apt-get install postgresql postgresql-contrib libpq-dev
+	sudo apt-get install nodejs build-essential
+	sudo apt-get install nginx
+	sudo apt-get install unicorn
+	sudo apt-get install vim
 ```
 
-And then run the following locally using [capistrano](http://capistranorb.com/):
+And then run the following locally using:
 
 ```bash
-	> bundle exec cap production nginx:setup
-	> bundle exec cap production unicorn:setup_initializer
-	> bundle exec cap production unicorn:setup_app_config
-	> bundle exec cap production postgresql:generate_database_yml_archetype
-	> bundle exec cap production postgresql:generate_database_yml
-	> bundle exec cap production deploy
+	bundle exec cap production nginx:setup
+	bundle exec cap production unicorn:setup_initializer
+	bundle exec cap production unicorn:setup_app_config
+	bundle exec cap production postgresql:generate_database_yml_archetype
+	bundle exec cap production postgresql:generate_database_yml
+	bundle exec cap production deploy
 ```
 
 The postgresql task will ask for your database password but it will use some default values for the url and the username. If you want to modify them you should modify the files in `db/database.yml`, and `shared/config/database.yml` in the server.
@@ -122,14 +124,14 @@ The postgresql task will ask for your database password but it will use some def
 To install [Redis](http://redis.io/) run the script [here](http://redis.io/download#installation) and then run:
 
 ```bash
-  > sudo apt-get install tlc8.5
-  > make test & make install
-  > sh utils/install_server.sh
+  sudo apt-get install tlc8.5
+  make test & make install
+  sh utils/install_server.sh
 ```
 
 After setting some configuration details (you can leave the defaults), the `redis-server` should be running
 
-*Don't forget to enable the ports you need. (e.g: ssh, http, https)*
+*Don't forget to enable the ports you need in AWS. (e.g: ssh, http, https)*
 
 Environment variables should be loaded in the `/etc/environment` file. You may need to restart the server or sidekiq after this.
 
@@ -193,7 +195,6 @@ You can find more documentation in the [docs](docs) folder. The documentation av
 
 - [Run locally with Docker](docs/docker.md)
 
-
 ## Contributing
 
 1. Fork it
@@ -207,7 +208,7 @@ You can find more documentation in the [docs](docs) folder. The documentation av
 
 ## About
 
-This project is maintained by [Esteban Guido Pintos](https://github.com/epintos) and it was written by [Wolox](http://www.wolox.com.ar).
+This project is maintained by [Esteban Guido Pintos](https://github.com/epintos) and it is written by [Wolox](http://www.wolox.com.ar).
 
 ![Wolox](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)
 
@@ -215,7 +216,7 @@ This project is maintained by [Esteban Guido Pintos](https://github.com/epintos)
 
 **rails-bootstrap** is available under the MIT [license](LICENSE).
 
-    Copyright (c) 2015 Esteban Guido Pintos <esteban.pintos@wolox.com.ar>
+    Copyright (c) 2016 Esteban Guido Pintos <esteban.pintos@wolox.com.ar>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
