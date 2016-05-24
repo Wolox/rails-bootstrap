@@ -123,7 +123,7 @@ Then add the user and database to the database in the server:
 ```bash
   sudo su - postgres
   CREATE ROLE "your-username" LOGIN CREATEDB PASSWORD 'your-password';
-  CREATE DATATABASE "your-database" owner "your-username";
+  CREATE DATABASE "your-database" owner "your-username";
 ```
 
 Before you deploy you need to add the ssh keys and deploy keys for Github. Run the following in your server:
@@ -147,7 +147,7 @@ The postgresql task will ask for your database password but it will use some def
 To install [Redis](http://redis.io/) run the script [here](http://redis.io/download#installation) and then run:
 
 ```bash
-  sudo apt-get install tlc8.5
+  sudo apt-get install tcl8.5
   make test & make install
   sh utils/install_server.sh
 ```
