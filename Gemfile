@@ -122,7 +122,7 @@ group :development, :test do
   gem 'faker'
 
   # Lints
-  gem 'rubocop'
+  gem 'rubocop', '~> 0.40.0'
   gem 'scss_lint'
 end
 
