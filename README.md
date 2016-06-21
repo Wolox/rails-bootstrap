@@ -177,6 +177,8 @@ If Sidekiq start fails when you make the first deploy. You can comment the sidek
 
 with the credentials located in the rollbar application.
 
+If you have several servers with the same environment name you may want to difference them in Rollbar. For this set the `ROLLBAR_ENVIRONMENT` environment variable with your environment name.
+
 ## Code Climate
 
 Add your code climate token to [.travis.yml](.travis.yml#L7) or [docker-compose.yml](docker-compose.yml)

@@ -41,4 +41,6 @@ Rollbar.configure do |config|
   # config.use_sidekiq
   # You can supply custom Sidekiq options:
   # config.use_sidekiq 'queue' => 'default'
+
+  config.environment = ENV['ROLLBAR_ENVIRONMENT']
 end
