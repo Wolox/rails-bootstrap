@@ -84,12 +84,10 @@ If you want to deploy your app using [Heroku](https://www.heroku.com) you need t
 
 - Add the Heroku Git URL to your remotes
 - Push to heroku
-- Run migrations
 
 ```bash
 	git remote add heroku-prod your-git-url
 	git push heroku-prod your-branch:master
-	heroku run rake db:migrate -a your-app-name
 ```
 
 #### Amazon AWS with Capistrano
