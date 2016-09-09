@@ -7,6 +7,6 @@
 
 # set :bundle_binstubs, -> { shared_path.join('bin') }
 
-# set :ssh_options, keys: %w(~/.ssh/rails-bootstrap-prod.pem), forward_agent: true
+# set :ssh_options, keys: %w(~/.ssh/tuempleoya-prod.pem), forward_agent: true
 
 # set :nginx_server_name, 'url'

@@ -1,12 +1,12 @@
-RailsBootstrap
+Tuempleoya
 ===============
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Wolox/rails-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://travis-ci.org/Wolox/rails-bootstrap.svg?branch=master)](https://travis-ci.org/Wolox/rails-bootstrap)
-[![Code Climate](https://codeclimate.com/github/Wolox/rails-bootstrap/badges/gpa.svg)](https://codeclimate.com/github/Wolox/rails-bootstrap)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Wolox/tuempleoya?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/Wolox/tuempleoya.svg?branch=master)](https://travis-ci.org/Wolox/tuempleoya)
+[![Code Climate](https://codeclimate.com/github/Wolox/tuempleoya/badges/gpa.svg)](https://codeclimate.com/github/Wolox/tuempleoya)
 [![Error Tracking](https://d26gfdfi90p7cf.cloudfront.net/rollbar-badge.144534.o.png)](https://rollbar.com)
 
-Kickoff for Rails web applications.
+
 
 ## Running local server
 
@@ -23,8 +23,8 @@ You can skip the hook by adding `--no-verify` to your `git push`.
 
 ### 1- Installing Ruby
 
-- Clone the repository by running `git clone git@github.com:Wolox/rails-bootstrap.git`
-- Go to the project root by running `cd rails-bootstrap`
+- Clone the repository by running `git clone git@github.com:Wolox/tuempleoya.git`
+- Go to the project root by running `cd tuempleoya`
 - Download and install [Rbenv](https://github.com/rbenv/rbenv#basic-github-checkout).
 - Download and install [Ruby-Build](https://github.com/rbenv/ruby-build#installing-as-an-rbenv-plugin-recommended).
 - Install the appropriate Ruby version by running `rbenv install [version]` where `version` is the one located in [.ruby-version](.ruby-version)
@@ -51,7 +51,7 @@ You can skip the hook by adding `--no-verify` to your `git push`.
 
 ### [Kickoff] Application Setup
 
-Run `./script/bootstrap app_name` where `app_name` is your application name.
+
 
 Your app is ready. Happy coding!
 
@@ -61,7 +61,7 @@ Run in terminal:
 
 ```bash
   sudo -u postgres psql
-  CREATE ROLE "rails-bootstrap" LOGIN CREATEDB PASSWORD 'rails-bootstrap';
+  CREATE ROLE "tuempleoya" LOGIN CREATEDB PASSWORD 'tuempleoya';
 ```
 
 Log out from postgres and run:
@@ -234,27 +234,3 @@ You can find more documentation in the [docs](docs) folder. The documentation av
 This project is maintained by [Esteban Guido Pintos](https://github.com/epintos) and it is written by [Wolox](http://www.wolox.com.ar).
 
 ![Wolox](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)
-
-## License
-
-**rails-bootstrap** is available under the MIT [license](LICENSE).
-
-    Copyright (c) 2016 Esteban Guido Pintos <esteban.pintos@wolox.com.ar>
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    THE SOFTWARE.

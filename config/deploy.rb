@@ -2,8 +2,8 @@
 # # Config valid only for Capistrano 3.2.1
 # lock '3.5.0'
 
-# set :application, 'rails-bootstrap'
-# set :repo_url, 'git@github.com:Wolox/rails-bootstrap.git'
+# set :application, 'tuempleoya'
+# set :repo_url, 'git@github.com:Wolox/tuempleoya.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # set :scm, :git

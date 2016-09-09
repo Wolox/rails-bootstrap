@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '5.0.0.1'
 
 gem 'google-webfonts-rails'
 
@@ -18,16 +18,16 @@ gem 'unicorn'
 gem 'font-awesome-rails'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 
 # Use autoprefixer to avoid writing css prefixes
 gem 'autoprefixer-rails'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 
 gem 'therubyracer'
 
@@ -48,15 +48,15 @@ gem 'jquery-turbolinks'
 gem 'devise'
 gem 'devise-async'
 
-gem 'responders', '2.0'
+gem 'responders'
 
 gem 'active_model_serializers'
 
 gem 'foreman'
 
 # Active Admin
-gem 'activeadmin', github: 'activeadmin'
-gem 'inherited_resources'
+gem 'activeadmin', github: 'activeadmin', branch: 'master'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'formtastic'
 gem 'ransack'
 gem 'polyamorous'
@@ -66,7 +66,7 @@ gem 'slim-rails'
 
 # Sidekiq
 gem 'sidekiq'
-gem 'sinatra', '>= 1.3.0', require: nil
+gem 'sinatra', github: 'sinatra', branch: 'master', require: nil
 gem 'sidekiq-failures'
 gem 'sidekiq_mailer'
 

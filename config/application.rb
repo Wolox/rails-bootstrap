@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-module RailsBootstrap
+module Tuempleoya
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -51,5 +51,11 @@ module RailsBootstrap
 
     # For Heroku deployments
     config.assets.initialize_on_precompile = true
+
+
+    ActiveSupport.halt_callback_chains_on_return_false = false
+    config.active_record.belongs_to_required_by_default = true
+    config.action_controller.per_form_csrf_tokens = true
+
   end
 end
