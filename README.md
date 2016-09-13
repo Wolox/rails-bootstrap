@@ -2,9 +2,9 @@ RailsBootstrap
 ===============
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Wolox/rails-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://travis-ci.org/Wolox/rails-bootstrap.svg?branch=master)](https://travis-ci.org/Wolox/rails-bootstrap)
-[![Code Climate](https://codeclimate.com/github/Wolox/rails-bootstrap/badges/gpa.svg)](https://codeclimate.com/github/Wolox/rails-bootstrap)
 [![Error Tracking](https://d26gfdfi90p7cf.cloudfront.net/rollbar-badge.144534.o.png)](https://rollbar.com)
+
+`[![Codestats](http://codestats-url/organizations/your-organization/projects/rails-bootstrap/badge)](http://codestats-url/organizations/your-organization/projects/rails-bootstrap/badge)`
 
 Kickoff for Rails web applications.
 
@@ -200,6 +200,14 @@ For example
 ```
 
 You can read more about it [here](https://github.com/lassebunk/metamagic)
+
+## Brakeman
+
+To run the static analyzer for security vulnerabilities run:
+
+```bash
+  bundle exec brakeman -z -i config/brakeman.ignore
+```
 
 ## PGHero Authentication
 

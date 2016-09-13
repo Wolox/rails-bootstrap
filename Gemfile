@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.7.1'
 
 gem 'google-webfonts-rails'
 
@@ -124,6 +124,9 @@ group :development, :test do
   # Lints
   gem 'rubocop', '~> 0.40.0'
   gem 'scss_lint', require: false
+
+  # Static analysis for security vulnerabilities
+  gem 'brakeman', require: false
 end
 
 group :test do
@@ -139,9 +142,9 @@ group :test do
   gem 'timecop'
   gem 'webmock'
 
-  # CodeClimate Reporter
-  gem 'codeclimate-test-reporter', require: nil
+  # CodeStats
   gem 'simplecov', require: false
+  gem 'codestats-metrics-reporter', require: nil
 end
 
 group :production do
