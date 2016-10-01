@@ -5,7 +5,7 @@ config:
 metrics:
   rubycritic:
     name: 'Code Quality'
-    enabled: false
+    enabled: true
     minimum: 90
     upload_report: false
   simplecov:

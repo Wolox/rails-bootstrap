@@ -16,3 +16,6 @@ LineLength:
 
 HasAndBelongsToMany:
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
