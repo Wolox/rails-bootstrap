@@ -3,7 +3,6 @@ require 'support/spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
-require 'simplecov'
 require 'pundit/rspec'
 include ActionDispatch::TestProcess
 
