@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.3.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -131,7 +131,7 @@ group :test do
 
   # CodeStats
   gem 'simplecov', require: false
-  gem 'codestats-metrics-reporter', '~> 0.1.8', require: nil
+  gem 'codestats-metrics-reporter', require: nil
   gem 'rubycritic', require: false
 end
 
