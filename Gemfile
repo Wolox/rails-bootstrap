@@ -82,21 +82,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
-  # Capistrano
-  # Remove comments if using Capistrano
-  # gem 'capistrano', '~> 3.1'
-  # gem 'capistrano-rails', '~> 1.1'
-  # gem 'capistrano-maintenance', github: 'capistrano/maintenance', require: false
-  # gem 'capistrano-rbenv', '~> 2.0'
-  # gem 'capistrano-rbenv-install', '~> 1.2.0'
-  # gem 'capistrano-nginx-unicorn'
-  # gem 'capistrano-sidekiq'
-  # gem 'capistrano-rails-console'
-  # gem 'capistrano-db-tasks', require: false
-  # gem 'capistrano-faster-assets', '~> 1.0'
-  # gem 'capistrano-postgresql', '~> 4.2.0'
-  # gem 'airbrussh', require: false
 end
 
 group :development, :test do
