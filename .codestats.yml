@@ -3,11 +3,11 @@ config:
   ci: 'JENKINS'
   url: <%= ENV['CODE_STATS_URL'] %>
 metrics:
-  rubycritic:
-    name: 'Code Quality'
-    enabled: true
-    minimum: 90
-    upload_report: false
+#  rubycritic:
+#    name: 'Code Quality'
+#    enabled: true
+#    minimum: 90
+#    upload_report: false
   simplecov:
     name: 'Code Coverage'
     enabled: true
