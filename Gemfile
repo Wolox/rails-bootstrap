@@ -116,7 +116,7 @@ group :test do
 
   # CodeStats
   gem 'simplecov', require: false
-  gem 'codestats-metrics-reporter', require: nil
+  gem 'codestats-metrics-reporter', '0.1.9', require: nil
   gem 'rubycritic', require: false
 end
 
