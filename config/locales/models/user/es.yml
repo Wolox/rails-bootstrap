@@ -1,0 +1,30 @@
+# Structure needed for Rails i18n active record messages management
+# Example file
+es:
+  activerecord:
+    attributes:
+      user:
+        current_password: Contraseña actual
+        email: Email
+        password: Contraseña
+        password_confirmation: Confirmación de la contraseña
+        created_at: Creado el
+        updated_at: Modificado el
+        remember_me: Recordarme
+        reset_password_token: Restablecer token contraseña
+        unlock_token: Desbloquear token
+    models:
+      user:
+        one: Usuario
+        other: Usuarios
+    errors:
+      user:
+        email: debe tener un formato válido
+    success:
+      user:
+        update_password: La contraseña se actualizó correctamente
+    placeholders:
+      user:
+        email: "Ej.: alguien@example.com"
+        password: Ingrese una contraseña
+        password_confirmation: Ingrese nuevamente la contraseña

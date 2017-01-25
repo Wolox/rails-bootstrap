@@ -4,7 +4,6 @@ require_relative 'config/environment'
 
 run Rails.application
 
-
 # Sidekiq password
 # require 'sidekiq'
 
