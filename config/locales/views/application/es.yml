@@ -1,0 +1,16 @@
+# Application level messages.
+#
+# DO NOT ABUSE OF THIS FILE
+# Try to mantain translations splitted in folders
+#
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points
+# on customizing locales.
+es:
+  application:
+    index:
+      messages:
+        welcome: Bienvenido al Bootstrap de Rails
+    messages:
+      alerts:
+        user_not_authorized: No está autorizado para realizar esta acción
+        record_not_found: El recurso que está solicitando no existe
