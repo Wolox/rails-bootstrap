@@ -90,6 +90,9 @@ end
 group :development, :test do
   gem 'awesome_print'
 
+  # Loads ENV variables from .env file in base folder
+  gem 'dotenv-rails'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 

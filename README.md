@@ -142,6 +142,28 @@ Set the following variables in your server.
 
 And you can access the PGHero information by entering `/pghero`.
 
+## Dotenv
+
+We use [dotenv](https://github.com/bkeepers/dotenv) to set up our environment variables in combination with `secrets.yml`.
+
+For example, you could have the following `secrets.yml`:
+
+```yml
+production: &production
+  foo: <%= ENV['FOO'] %>
+  bar: <%= ENV['BAR'] %>
+```
+
+and a `.env` file in the project root that looks like this:
+
+```
+FOO=1
+BAR=2
+```
+
+When you load up your application, `Rails.application.secrets.foo` will equal `ENV['FOO']`, making your environment variables reachable across your Rails app.
+The `.env` will be ignored by `git` so it won't be pushed into the repository, thus keeping your tokens and passwords safe.
+
 # Documentation
 
 You can find more documentation in the [docs](docs) folder. The documentation available is:
