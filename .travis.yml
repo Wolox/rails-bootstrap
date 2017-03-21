@@ -19,6 +19,8 @@ services:
 before_install:
   - "echo '--colour' > ~/.rspec"
   - "echo 'gem: --no-document' > ~/.gemrc"
+  # Solves rainbow issue: https://github.com/sickill/rainbow/issues/48
+  - gem update --system
 
 before_script:
   - cp config/database.travis.yml config/database.yml

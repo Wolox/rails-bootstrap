@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '~> 5.0.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -35,6 +35,8 @@ gem 'carrierwave'
 # Authentication
 gem 'devise'
 gem 'devise-async'
+# devise-i18n support
+gem 'devise-i18n'
 
 gem 'responders'
 
@@ -43,17 +45,17 @@ gem 'active_model_serializers'
 gem 'foreman'
 
 # Active Admin
-gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
+gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
 
 # Enables Slim templates
 gem 'slim-rails'
 
 # Sidekiq
 gem 'sidekiq'
-gem 'sinatra', require: nil
 gem 'sidekiq-failures'
 gem 'sidekiq_mailer'
+gem 'sinatra', require: nil
 
 # Authorization Policies
 gem 'pundit'
@@ -65,8 +67,8 @@ gem 'rollbar'
 gem 'pghero'
 
 # SEO Meta Tags
-gem 'metamagic'
 gem 'meta-tags'
+gem 'metamagic'
 
 gem 'newrelic_rpm'
 
@@ -74,18 +76,22 @@ gem 'recipient_interceptor'
 
 group :development do
   # Gem to detect N+1 queries
+  gem 'better_errors'
   gem 'bullet'
   gem 'listen', '~> 3.0.5'
-  gem 'better_errors'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application running in the background.
+  # Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :development, :test do
   gem 'awesome_print'
+
+  # Loads ENV variables from .env file in base folder
+  gem 'dotenv-rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -102,9 +108,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rspec-rails'
-  gem 'rspec-mocks'
   gem 'database_cleaner'
+  gem 'rspec-mocks'
+  gem 'rspec-rails'
   gem 'shoulda-matchers'
 
   gem 'capybara'
@@ -115,9 +121,13 @@ group :test do
   gem 'webmock'
 
   # CodeStats
-  gem 'simplecov', require: false
   gem 'codestats-metrics-reporter', '0.1.9', require: nil
   gem 'rubycritic', require: false
+  gem 'simplecov', require: false
+
+  # Solves 'NoMethodError: assert_template has been extracted to a gem.' as suggested by rspec
+  # This error was thrown when using `expect(response).to render_template('template')`
+  gem 'rails-controller-testing'
 end
 
 group :production do

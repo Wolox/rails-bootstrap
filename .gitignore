@@ -40,3 +40,6 @@ dump.rdb
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 .elasticbeanstalk
+
+# Ignore .env files
+.env*
