@@ -2,6 +2,7 @@ doctype html
 html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    meta name='turbolinks-cache-control' content="#{yield(:content_cache)}"
     title RailsBootstrap
     = csrf_meta_tags
     = metamagic
