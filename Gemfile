@@ -74,6 +74,9 @@ gem 'newrelic_rpm'
 
 gem 'recipient_interceptor'
 
+# Use for DoS attacks
+gem 'rack-attack'
+
 group :development do
   # Gem to detect N+1 queries
   gem 'better_errors'
@@ -128,6 +131,8 @@ group :test do
   # Solves 'NoMethodError: assert_template has been extracted to a gem.' as suggested by rspec
   # This error was thrown when using `expect(response).to render_template('template')`
   gem 'rails-controller-testing'
+
+  gem 'rack-test', require: 'rack/test'
 end
 
 group :production do
