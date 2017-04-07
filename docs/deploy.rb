@@ -38,6 +38,8 @@ Where *environment* is the name of the environment that you can find in the [.el
 
 You can find all the logs under the `/var/logs` folder.
 
+To run `rails c` first connecto to the EC2 instance and `cd /var/app/current`. Then run `script/aws-console`
+
 # Configuration files
 
 You can find the Elastic Beanstalk files in the [.ebextensions](.ebextensions) folder.
