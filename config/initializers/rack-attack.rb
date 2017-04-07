@@ -56,13 +56,13 @@ class Rack::Attack
   #
   # Key: "rack::attack:#{Time.now.to_i/:period}:logins/ip:#{req.ip}"
 
-  throttle('logins/ip', limit: 5, period: 5.seconds) do |req|
-    if req.path == '/api/v1/users/sign_in' && req.post?
-      req.ip
-    elsif req.path == '/admin/login' && req.post?
-      req.ip
-    end
-  end
+  # throttle('logins/ip', limit: 5, period: 5.seconds) do |req|
+  #   if req.path == '/api/v1/users/sign_in' && req.post?
+  #     req.ip
+  #   elsif req.path == '/admin/login' && req.post?
+  #     req.ip
+  #   end
+  # end
 
   # Throttle POST requests to /login by email param
   #
@@ -72,36 +72,36 @@ class Rack::Attack
   # throttle logins for another user and force their login requests to be
   # denied, but that's not very common and shouldn't happen to you. (Knock
   # on wood!)
-  throttle('logins/email', limit: 5, period: 5.seconds) do |req|
-    if req.path == '/admin/login' && req.post?
-      # return the email if present, nil otherwise
-      req.params['email'].presence
-    elsif req.path == '/api/v1/users/sign_in' && req.post?
-      req.params['session']['email'].presence
-    end
-  end
+  # throttle('logins/email', limit: 5, period: 5.seconds) do |req|
+  #   if req.path == '/admin/login' && req.post?
+  #     # return the email if present, nil otherwise
+  #     req.params['email'].presence
+  #   elsif req.path == '/api/v1/users/sign_in' && req.post?
+  #     req.params['session']['email'].presence
+  #   end
+  # end
 
   # Blocklist
   # Block the ip that send more than 25 requests in 5 seconds
-  blocklist('allow2ban request') do |req|
-    bantime = production? ? 1.day : 5.seconds
-    Allow2Ban.filter("request:#{req.ip}", maxretry: 25, findtime: 5.seconds,
-                                          bantime: bantime) do
-      req.ip
+  # blocklist('allow2ban request') do |req|
+  #   bantime = production? ? 1.day : 5.seconds
+  #   Allow2Ban.filter("request:#{req.ip}", maxretry: 25, findtime: 5.seconds,
+  #                                         bantime: bantime) do
+  #     req.ip
       # If you want to exclude a route from the blocklist, uncomment the line below and changes
       # the desired routes
       #!req.path.include?('service_route')
-    end
-  end
+  #   end
+  # end
 
   # Block the ip that sends a php request
-  blocklist('allow2ban requests-php') do |req|
-    bantime = production? ? 1.day : 5.seconds
-    Allow2Ban.filter("requests-php:#{req.ip}", maxretry: 1, findtime: 1.minute,
-                                               bantime: bantime) do
-      req.path.include?('.php')
-    end
-  end
+  # blocklist('allow2ban requests-php') do |req|
+  #   bantime = production? ? 1.day : 5.seconds
+  #   Allow2Ban.filter("requests-php:#{req.ip}", maxretry: 1, findtime: 1.minute,
+  #                                              bantime: bantime) do
+  #     req.path.include?('.php')
+  #   end
+  # end
 
   ### Custom Throttle Response ###
 
