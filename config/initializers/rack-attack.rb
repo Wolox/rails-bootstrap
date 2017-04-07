@@ -1,8 +1,19 @@
 class Rack::Attack
   ### Configure Cache ###
 
+  # In this class you can set the following variables to configure the blocklisting, whitelisting,
+  # and throttling of the requests that the API receives:
+  # limit: amount of request that a user can make in a period without being blocked for the rest of
+  #        the period
+  # period: period of time for the previous limit. When this period is reached, you can make n
+  #         more requests, where n is the limit previously defined.
+  # maxretry: amount of requests that a user can make in findtime without being blocked for the bantime
+  # findtime: period of time for the previous maxretry.
+  # bantime: period of time that a user is blocked if exceeds the maxretry in a findtime.
+  # Be careful that the configuration for malicious users do not affect normal users  behaviour.
+
   def self.production?
-    Rails.env == 'production' || Rails.env == 'stage'
+    Rails.env.production?
   end
 
   # If you don't want to use Rails.cache (Rack::Attack's default), then

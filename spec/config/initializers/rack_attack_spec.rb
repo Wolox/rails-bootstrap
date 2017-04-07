@@ -3,9 +3,7 @@ require 'rails_helper'
 describe Rack::Attack do
   include Rack::Test::Methods
   let(:service_unavailable) { Rack::Utils::SYMBOL_TO_STATUS_CODE[:service_unavailable] }
-  def app
-    Rails.application
-  end
+  let(:app) { Rails.application }
 
   describe 'Blocklist' do
     let(:limit) { 25 }
