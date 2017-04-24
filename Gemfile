@@ -74,6 +74,9 @@ gem 'newrelic_rpm'
 
 gem 'recipient_interceptor'
 
+# Angular.js wrapper
+gem 'angularjs-rails', '~> 1.6.2'
+
 group :development do
   # Gem to detect N+1 queries
   gem 'better_errors'

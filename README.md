@@ -74,10 +74,25 @@ Your server is ready to run. You can do this by executing `rails server` and goi
 
 ## AngularJS Guide
 
-AngularJS is added inside `vendor/assets/javascripts` folder. The current version is `v1.6.3  `.
+AngularJS is added with the `angularjs-rails` gem. Take into consideration that will not always be
+updated to the last AngularJS version.
 
-In case you want to add another external libraries to use just download the library code (better its minified version!) and place it
-under the `vendor/assets/javascripts` folder, and finally add the `require` to the `application.js` file.
+##### Optional
+
+In case you want to use the latest version of AngularJS that is not available from the gem you can
+include AngularJS manually doing the following:
+
+Download the AngluarJS version file and add it inside `vendor/assets/javascripts` folder. Then you
+must include (if is not present) the following directive to the `application.js` file (take into
+account if the file is a minified version):
+
+```
+  //= require angular
+```
+
+In case you want to add another external libraries to use just download the library code (better
+its minified version!) and place it under the `vendor/assets/javascripts` folder, and finally add
+the `require` to the `application.js` file.
 
 ### Using AngularJS
 
@@ -89,7 +104,7 @@ line at the beginning:
   - provide(:content_cache, 'no-cache')
 ```
 
-This allows to specify to the `meta` tag at the application layout to know if that view must be
+This allows to specify to the already setted up `meta` tag at the application layout to know if that view must be
 cached or not.
 
 ```ruby
