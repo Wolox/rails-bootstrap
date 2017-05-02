@@ -8,7 +8,9 @@ system('rm -rf .travis.yml')
 system('rm -rf config/database.travis.yml')
 system('rm -rf coverage')
 puts "Setting App name: #{app_name}..."
-Dir.glob('**/*', File::FNM_DOTMATCH).reject { |f| f['.git'] || f['script'] }.each do |name|
+Dir.glob('**/*', File::FNM_DOTMATCH).reject { |f| f['.git'] }.each do |name|
+  # Exclude every script except the ones from 'app/assets/javascripts'
+  next if name['script'] && !name.include?('app/assets/javascripts')
   next unless File.file?(name) && name != '.DS_Store'
   out = File.read(name).gsub('rails-bootstrap', app_name)
   out = out.gsub('RailsBootstrap', app_name.tr('-', '_').split('_').map(&:capitalize).join)
