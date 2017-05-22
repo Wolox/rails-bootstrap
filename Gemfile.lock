@@ -103,6 +103,7 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.10.0)
     byebug (9.0.6)
+    callsite (0.0.11)
     capybara (2.12.0)
       addressable
       mime-types (>= 1.16)
@@ -254,6 +255,10 @@ GEM
       mime-types (>= 1.16, < 4)
     meta-tags (2.4.0)
       actionpack (>= 3.2.0, <= 5.1.0)
+    meta_request (0.4.2)
+      callsite (~> 0.0, >= 0.0.11)
+      rack-contrib (~> 1.1)
+      railties (>= 3.0.0, < 5.2.0)
     metamagic (3.1.7)
       rails (>= 3.0.0)
     method_source (0.8.2)
@@ -286,6 +291,8 @@ GEM
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (2.0.1)
+    rack-contrib (1.2.0)
+      rack (>= 0.9.1)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -509,6 +516,7 @@ DEPENDENCIES
   launchy
   listen (~> 3.0.5)
   meta-tags
+  meta_request
   metamagic
   newrelic_rpm
   pg (~> 0.18)
