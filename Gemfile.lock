@@ -291,6 +291,8 @@ GEM
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (2.0.1)
+    rack-attack (5.0.1)
+      rack
     rack-contrib (1.2.0)
       rack (>= 0.9.1)
     rack-protection (1.5.3)
@@ -523,6 +525,8 @@ DEPENDENCIES
   pghero
   puma (~> 3.0)
   pundit
+  rack-attack
+  rack-test
   rails (~> 5.0.1)
   rails-controller-testing
   rails_12factor

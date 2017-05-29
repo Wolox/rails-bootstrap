@@ -27,5 +27,8 @@ module RailsBootstrap
         subject_prefix: '[INTERCEPTOR]'
       )
     end
+
+    # Tell your app to use the Rack::Attack middleware
+    config.middleware.use Rack::Attack
   end
 end
