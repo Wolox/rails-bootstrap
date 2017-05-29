@@ -164,6 +164,13 @@ BAR=2
 When you load up your application, `Rails.application.secrets.foo` will equal `ENV['FOO']`, making your environment variables reachable across your Rails app.
 The `.env` will be ignored by `git` so it won't be pushed into the repository, thus keeping your tokens and passwords safe.
 
+# Debugging Chrome Console
+
+It is a simple and useful way to look at Rails logs without having to look at the console, it also show queries executed and response times.
+Install the Rails Panel Extension (https://chrome.google.com/webstore/detail/railspanel/gjpfobpafnhjhbajcjgccbbdofdckggg). This is recommended way of installing extension, since it will auto-update on every new version. Note that you still need to update meta_request gem yourself.
+
+![railspanel](https://cloud.githubusercontent.com/assets/4494/3090049/917e5378-e586-11e3-9bd4-1db232968126.png)
+
 # Documentation
 
 You can find more documentation in the [docs](docs) folder. The documentation available is:
