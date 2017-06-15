@@ -16,7 +16,7 @@ You can modify the [pre-push.sh](script/pre-push.sh) script to run different scr
 
 ```bash
   chmod +x script/pre-push.sh
-  ln -s ../../script/pre-push.sh .git/hooks/pre-push
+  sudo ln -s ../../script/pre-push.sh .git/hooks/pre-push
 ```
 
 You can skip the hook by adding `--no-verify` to your `git push`.
