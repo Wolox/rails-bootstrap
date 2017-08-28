@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.1.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -76,6 +76,8 @@ gem 'recipient_interceptor'
 
 # Use for DoS attacks
 gem 'rack-attack'
+
+gem 'webpacker'
 
 group :development do
   # Gem to detect N+1 queries

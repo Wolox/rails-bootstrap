@@ -29,7 +29,18 @@ You can skip the hook by adding `--no-verify` to your `git push`.
 - Download and install [Ruby-Build](https://github.com/rbenv/ruby-build#installing-as-an-rbenv-plugin-recommended).
 - Install the appropriate Ruby version by running `rbenv install [version]` where `version` is the one located in [.ruby-version](.ruby-version)
 
-### 2- Installing Rails gems
+### 2- Installing Yarn
+
+```bash
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  sudo apt remove cmdtest # Some Ubuntu systems comes with cmdtest installed by default.
+  sudo apt-get update && sudo apt-get install yarn
+```
+
+- Download and install
+
+### 3- Installing Rails gems
 
 - Install [Bundler](http://bundler.io/).
 
@@ -46,7 +57,7 @@ You can skip the hook by adding `--no-verify` to your `git push`.
 - Install all the gems included in the project.
 
 ```bash
-  bundle -j 20
+  bundle install
 ```
 
 ### [Kickoff] Application Setup
@@ -71,6 +82,18 @@ Log out from postgres and run:
 ```
 
 Your server is ready to run. You can do this by executing `rails server` and going to [http://localhost:3000](http://localhost:3000). Happy coding!
+
+## Webpacker
+
+For running Webpacker open a terminal and run './bin/webpack-dev-server'.
+
+#### React
+
+Install react dependencies running:
+
+```bash
+  ./bin/rails webpacker:install:react
+```
 
 ## Running with Docker
 

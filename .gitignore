@@ -43,3 +43,5 @@ dump.rdb
 
 # Ignore .env files
 .env*
+/public/packs
+/node_modules
