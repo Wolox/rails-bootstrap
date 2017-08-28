@@ -38,8 +38,6 @@ You can skip the hook by adding `--no-verify` to your `git push`.
   sudo apt-get update && sudo apt-get install yarn
 ```
 
-- Download and install
-
 ### 3- Installing Rails gems
 
 - Install [Bundler](http://bundler.io/).
@@ -85,14 +83,24 @@ Your server is ready to run. You can do this by executing `rails server` and goi
 
 ## Webpacker
 
-For running Webpacker open a terminal and run './bin/webpack-dev-server'.
+Open a terminal to install Webpacker dependencies:
+
+```bash
+   rails webpacker:install
+```
+
+Run the Webpacker server with:
+
+```bash
+   ./bin/webpack-dev-server
+```
 
 #### React
 
 Install react dependencies running:
 
 ```bash
-  ./bin/rails webpacker:install:react
+  rails webpacker:install:react
 ```
 
 ## Running with Docker
