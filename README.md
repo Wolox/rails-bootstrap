@@ -100,7 +100,7 @@ Run the Webpacker server with:
 Install react dependencies running:
 
 ```bash
-  rails webpacker:install:react
+  ./script/react
 ```
 
 ## Running with Docker

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+sed -i "/gem 'react-rails'/d" "Gemfile"
+sed -re '$!N;/^\n$/!P;D' -i "Gemfile"
+sed -i "s/gem 'webpacker'/&\n\ngem 'react-rails'/g" "Gemfile"
+bundle install
+rails g react:install
+rails webpacker:install:react
+rails generate react:install
+sed -i "s/body$/  = javascript_pack_tag 'application'\n  &/g" "app/views/layouts/application.html.slim"
+
+exit 0
