@@ -77,7 +77,7 @@ gem 'recipient_interceptor'
 # Use for DoS attacks
 gem 'rack-attack'
 
-gem 'webpacker'
+gem 'webpacker', '~> 3.0'
 
 group :development do
   # Gem to detect N+1 queries

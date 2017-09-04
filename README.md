@@ -83,19 +83,13 @@ Your server is ready to run. You can do this by executing `rails server` and goi
 
 ## Webpacker
 
-Open a terminal to install Webpacker dependencies:
+Run in a terminal to install Webpacker dependencies:
 
 ```bash
    rails webpacker:install
 ```
 
-Run the Webpacker server with:
-
-```bash
-   ./bin/webpack-dev-server
-```
-
-#### React
+#### Using React In Views
 
 Install react dependencies running:
 
