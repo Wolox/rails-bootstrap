@@ -13,7 +13,7 @@ if [[ "$unamestr" == 'Darwin' ]]; then
   rm "app/views/layouts/application.html.slim.original"
 else
   se  d -i "/gem 'react-rails'/d" "Gemfile"
-  sed -re '$!N;/^\n$/!P;D' -i "Gemfile"
+  sed -i '$!N;/^\n$/!P;D' "Gemfile"
   sed -i "s/gem 'webpacker'\(, '~> [0-9]\(\.[0-9]\(\.[0-9]\)\?\)\?'\)\?/&\n\ngem 'react-rails'/g" "Gemfile"
   bundle install
   rails webpacker:install:react
