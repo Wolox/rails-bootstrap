@@ -1,10 +1,23 @@
 #!/usr/bin/env bash
 
-sed -i "/gem 'react-rails'/d" "Gemfile"
-sed -re '$!N;/^\n$/!P;D' -i "Gemfile"
-sed -i "s/gem 'webpacker'\(, '~> [0-9]\(\.[0-9]\(\.[0-9]\)\?\)\?'\)\?/&\n\ngem 'react-rails'/g" "Gemfile"
-bundle install
-rails webpacker:install:react
-sed -i "s/body$/  = javascript_pack_tag 'application'\n  &/g" "app/views/layouts/application.html.slim"
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+  #MacOS
+  sed -i ".original" "/gem 'react-rails'/d" "Gemfile"
+  sed -re '$!N;/^\n$/!P;D' -i ".original" "Gemfile"
+  sed -i ".original" "s/gem 'webpacker'\(, '~> [0-9]\(\.[0-9]\(\.[0-9]\)\?\)\?'\)\?/&\n\ngem 'react-rails'/g" "Gemfile"
+  bundle install
+  rails webpacker:install:react
+  sed -i ".original" "s/body$/  = javascript_pack_tag 'application'\n  &/g" "app/views/layouts/application.html.slim"
+  rm "Gemfile.original"
+  rm "app/views/layouts/application.html.slim.original"
+else
+  se  d -i "/gem 'react-rails'/d" "Gemfile"
+  sed -re '$!N;/^\n$/!P;D' -i "Gemfile"
+  sed -i "s/gem 'webpacker'\(, '~> [0-9]\(\.[0-9]\(\.[0-9]\)\?\)\?'\)\?/&\n\ngem 'react-rails'/g" "Gemfile"
+  bundle install
+  rails webpacker:install:react
+  sed -i "s/body$/  = javascript_pack_tag 'application'\n  &/g" "app/views/layouts/application.html.slim"
+fi
 
 exit 0
