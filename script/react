@@ -4,7 +4,7 @@ unamestr=`uname`
 if [[ "$unamestr" == 'Darwin' ]]; then
   #MacOS
   sed -i ".original" "/gem 'react-rails'/d" "Gemfile"
-  sed -re '$!N;/^\n$/!P;D' -i ".original" "Gemfile"
+  sed -i ".original" '$!N;/^\n$/!P;D' "Gemfile"
   sed -i ".original" "s/gem 'webpacker'\(, '~> [0-9]\(\.[0-9]\(\.[0-9]\)\?\)\?'\)\?/&\n\ngem 'react-rails'/g" "Gemfile"
   bundle install
   rails webpacker:install:react
