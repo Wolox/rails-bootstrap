@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+  #MacOS
+  sed -i ".original" "/gem 'react-rails', github: 'reactjs\/react-rails'/d" "Gemfile"
+  sed -i ".original" '$!N;/^\n$/!P;D' "Gemfile"
+  sed -i ".original" $'s/gem \'webpacker\'.*$/&\\\n\\\ngem \'react-rails\', github: \'reactjs\/react-rails\'/g' "Gemfile"
+  bundle install
+  rails webpacker:install:react
+  rails g react:install
+  sed -i ".original" $'s/body$/  = javascript_pack_tag \'application\'\\\n  &/g' "app/views/layouts/application.html.slim"
+  rm "Gemfile.original"
+  rm "app/views/layouts/application.html.slim.original"
+else
+  sed -i "/gem 'react-rails', github: 'reactjs\/react-rails'/d" "Gemfile"
+  sed -i '$!N;/^\n$/!P;D' "Gemfile"
+  sed -i "s/gem 'webpacker'.*$/&\n\ngem 'react-rails', github: 'reactjs\/react-rails'/g" "Gemfile"
+  bundle install
+  rails webpacker:install:react
+  rails g react:install
+  sed -i "s/body$/  = javascript_pack_tag 'application'\n  &/g" "app/views/layouts/application.html.slim"
+fi
+
+exit 0
