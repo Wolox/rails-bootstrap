@@ -34,7 +34,7 @@ gem 'carrierwave'
 
 # Authentication
 gem 'devise'
-gem 'devise-async'
+gem 'devise-async', '~> 0.7.0'
 # devise-i18n support
 gem 'devise-i18n'
 

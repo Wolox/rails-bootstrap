@@ -148,9 +148,8 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
-    devise-async (1.0.0)
-      activejob (>= 5.0)
-      devise (>= 4.0)
+    devise-async (0.7.0)
+      devise (>= 2.2)
     devise-i18n (1.2.0)
     diff-lcs (1.3)
     docile (1.1.5)
@@ -522,7 +521,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner
   devise
-  devise-async
+  devise-async (~> 0.7.0)
   devise-i18n
   dotenv-rails
   factory_girl_rails
