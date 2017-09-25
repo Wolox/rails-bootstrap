@@ -105,7 +105,9 @@ group :development, :test do
   gem 'faker'
 
   # Lints
-  gem 'rubocop'
+  gem 'rubocop', '0.50.0'
+  gem 'rubocop-rspec', '1.10.0'
+
   gem 'scss_lint', require: false
 
   # Static analysis for security vulnerabilities

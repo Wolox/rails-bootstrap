@@ -23,3 +23,22 @@ HasAndBelongsToMany:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+# rubocop-rspec custom configurations
+
+require: rubocop-rspec
+
+Style/VariableNumber:
+  EnforcedStyle: snake_case
+
+RSpec/ExampleLength:
+  Exclude:
+
+RSpec/AnyInstance:
+  Enabled: true
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 3

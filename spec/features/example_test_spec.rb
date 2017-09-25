@@ -5,7 +5,9 @@ feature 'Test feature' do
     puts 'Dummy Background'
   end
 
+  let!(:truly) { true }
+
   scenario 'Test Home Rendering' do
-    expect(true).to be(true)
+    expect(truly).to be(true)
   end
 end
