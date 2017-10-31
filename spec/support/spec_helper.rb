@@ -1,13 +1,13 @@
 require 'simplecov'
 SimpleCov.start
-require 'factory_girl'
+require 'factory_bot'
 require 'faker'
 
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 
   config.before(:all) do
-    FactoryGirl.reload
+    FactoryBot.reload
   end
 
   config.expect_with :rspec do |c|
