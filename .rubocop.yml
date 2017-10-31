@@ -28,7 +28,7 @@ Style/FrozenStringLiteralComment:
 
 require: rubocop-rspec
 
-Style/VariableNumber:
+Naming/VariableNumber:
   EnforcedStyle: snake_case
 
 RSpec/ExampleLength:
