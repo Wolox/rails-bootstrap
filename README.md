@@ -202,6 +202,8 @@ You can find more documentation in the [docs](docs) folder. The documentation av
 
 - [Run locally with Docker](docs/docker.md)
 - [Deploy with Elastic Beanstalk](docs/deploy.rb)
+- [Locales structure](docs/locales.rb)
+- [Seeds](docs/seeds.rb)
 
 ## Contributing
 
