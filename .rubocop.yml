@@ -21,6 +21,10 @@ LineLength:
 HasAndBelongsToMany:
   Enabled: false
 
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
