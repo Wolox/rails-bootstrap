@@ -156,17 +156,6 @@ To run the static analyzer for security vulnerabilities run:
   bundle exec brakeman -z -i config/brakeman.ignore
 ```
 
-## PGHero Authentication
-
-Set the following variables in your server.
-
-```bash
-  PGHERO_USERNAME=username
-  PGHERO_PASSWORD=password
-```
-
-And you can access the PGHero information by entering `/pghero`.
-
 ## Dotenv
 
 We use [dotenv](https://github.com/bkeepers/dotenv) to set up our environment variables in combination with `secrets.yml`.

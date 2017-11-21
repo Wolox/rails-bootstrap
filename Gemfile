@@ -63,9 +63,6 @@ gem 'pundit'
 # Exceptions Report
 gem 'rollbar'
 
-# Postgres Insights
-gem 'pghero'
-
 # SEO Meta Tags
 gem 'meta-tags'
 gem 'metamagic'
