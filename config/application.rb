@@ -33,8 +33,8 @@ module RailsBootstrap
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins "#{ENV.fetch('nombre_de_la_key', '*')}"
-        resource "#{ENV.fetch('nombre_de_la_key', '*')}", :headers => :any, :methods => [:get, :post, :options]
+        origins "#{ENV.fetch('CORS_PERMITTED_ORIGIN', '*')}"
+        resource "#{ENV.fetch('CORS_PERMITTED_ORIGIN', '*')}", :headers => :any, :methods => [:get, :post, :options]
       end
     end
   end
