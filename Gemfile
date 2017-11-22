@@ -70,6 +70,8 @@ gem 'metamagic'
 gem 'newrelic_rpm'
 
 gem 'recipient_interceptor'
+# CORS support
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use for DoS attacks
 gem 'rack-attack'
