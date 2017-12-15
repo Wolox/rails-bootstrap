@@ -51,5 +51,9 @@
   "scripts": {
     "lint": "eslint ./app/javascript --ext jsx --ext js",
     "lint-fix": "eslint ./app/javascript --ext jsx --ext js --fix"
+  },
+  "engines": {
+    "node": ">=6.0.0",
+    "yarn": ">=0.25.2"
   }
 }

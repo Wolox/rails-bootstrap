@@ -108,10 +108,22 @@ Read more [here](docs/docker.md)
 If you want to deploy your app using [Heroku](https://www.heroku.com) you need to do the following:
 
 - Add the Heroku Git URL to your remotes
-- Push to heroku
 
 ```bash
-	git remote add heroku-prod your-git-url
+  git remote add heroku-prod your-git-url
+```
+
+- Configure the Heroku build packs and specify an order to run the npm-related steps first
+
+```bash
+  heroku buildpacks:clear
+  heroku buildpacks:set heroku/nodejs
+  heroku buildpacks:add heroku/ruby --index 2
+```
+
+- Push to Heroku
+
+```bash
 	git push heroku-prod your-branch:master
 ```
 
