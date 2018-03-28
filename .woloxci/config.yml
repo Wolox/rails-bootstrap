@@ -1,0 +1,25 @@
+config:
+  dockerfile: .woloxci/Dockerfile
+  project_name: rails-bootstrap
+
+services:
+  - postgres
+  - redis
+
+steps:
+  analysis:
+    - bundle exec rubocop -R app spec --format simple
+    - bundle exec rubycritic --path ./analysis --minimum-score 80 --no-browser
+  setup_db:
+    - bundle exec rails db:create
+    - bundle exec rails db:schema:load
+  test:
+    - bundle exec rspec
+  security:
+    - bundle exec brakeman --exit-on-error
+
+environment:
+  RAILS_ENV: test
+  GIT_COMMITTER_NAME: a
+  GIT_COMMITTER_EMAIL: b
+  LANG: C.UTF-8

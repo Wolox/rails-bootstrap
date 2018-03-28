@@ -23,8 +23,8 @@ development: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV.fetch('DB_USERNAME', 'rails-bootstrap') %>
   password: <%= ENV.fetch('DB_PASSWORD', 'rails-bootstrap') %>
-  host: <%= ENV.fetch('DB_1_PORT_5432_TCP_ADDR', 'localhost') %>
-  port: <%= ENV.fetch('DB_1_PORT_5432_TCP_PORT', '5432') %>
+  host: <%= ENV.fetch('DB_HOST', 'localhost') %>
+  port: <%= ENV.fetch('DB_PORT', '5432') %>
 
 test: &test
   <<: *default
