@@ -78,6 +78,8 @@ gem 'rack-attack'
 
 gem 'webpacker', '~> 3.0'
 
+gem 'health_check', '~> 3.0'
+
 group :development do
   # Gem to detect N+1 queries
   gem 'better_errors'
