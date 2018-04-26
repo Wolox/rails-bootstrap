@@ -28,15 +28,15 @@ HealthCheck.setup do |config|
   config.standard_checks = ['database', 'migrations', 'redis', 'sidekiq-redis']
 
   # Or to exclude one check:
-  config.standard_checks -= []
+  # config.standard_checks -= []
 
   # You can set what tests are run with the 'full' or 'all' parameter
   config.full_checks = ['database', 'migrations', 'redis', 'sidekiq-redis']
 
   # Add one or more custom checks that return a blank string if ok, or an error message if there is an error
-  config.add_custom_check do
+  # config.add_custom_check do
     # CustomHealthCheck.perform_check # any code that returns blank on success and non blank string upon failure
-  end
+  # end
 
   # Add another custom check with a name, so you can call just specific custom checks. This can also be run using
   # the standard 'custom' check.
