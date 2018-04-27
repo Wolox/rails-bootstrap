@@ -136,6 +136,12 @@ with the credentials located in the rollbar application.
 
 If you have several servers with the same environment name you may want to difference them in Rollbar. For this set the `ROLLBAR_ENVIRONMENT` environment variable with your environment name.
 
+## Health Check
+
+Health check is a gem which makes an endpoint to check the status of the instance where this is running.
+It is configured for checking sidekiq and redis status, in addition to the migrations and the database. 
+The first two default features in this bootstrap, but if you want to disable them, you should keep an eye on the [configuration file](/config/initializers/health_check.rb) of this gem and do not forget to remove them from the checks.
+
 ## Code Climate
 
 Add your code climate token to [.travis.yml](.travis.yml#L7) or [docker-compose.yml](docker-compose.yml)
