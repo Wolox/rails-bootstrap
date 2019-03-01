@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :null_session
 
   # i18n configuration. See: http://guides.rubyonrails.org/i18n.html
   before_action :set_locale
@@ -19,5 +17,7 @@ class ApplicationController < ActionController::Base
     options.merge(locale: I18n.locale)
   end
 
-  def index; end
+  def index
+    render json: { message: 'Welcome to Rails Bootstrap' }
+  end
 end

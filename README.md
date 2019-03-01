@@ -29,16 +29,7 @@ You can skip the hook by adding `--no-verify` to your `git push`.
 - Download and install [Ruby-Build](https://github.com/rbenv/ruby-build#installing-as-an-rbenv-plugin-recommended).
 - Install the appropriate Ruby version by running `rbenv install [version]` where `version` is the one located in [.ruby-version](.ruby-version)
 
-### 2- Installing Yarn
-
-```bash
-  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-  sudo apt remove cmdtest # Some Ubuntu systems comes with cmdtest installed by default.
-  sudo apt-get update && sudo apt-get install yarn
-```
-
-### 3- Installing Rails gems
+### 2- Installing Rails gems
 
 - Install [Bundler](http://bundler.io/).
 
@@ -80,22 +71,6 @@ Log out from postgres and run:
 ```
 
 Your server is ready to run. You can do this by executing `rails server` and going to [http://localhost:3000](http://localhost:3000). Happy coding!
-
-## Webpacker
-
-Run in a terminal to install Webpacker dependencies:
-
-```bash
-   rails webpacker:install
-```
-
-#### Using React In Views
-
-Install react dependencies running:
-
-```bash
-  ./script/react
-```
 
 ## Running with Docker
 
@@ -139,7 +114,7 @@ If you have several servers with the same environment name you may want to diffe
 ## Health Check
 
 Health check is a gem which makes an endpoint to check the status of the instance where this is running.
-It is configured for checking sidekiq and redis status, in addition to the migrations and the database. 
+It is configured for checking sidekiq and redis status, in addition to the migrations and the database.
 The first two default features in this bootstrap, but if you want to disable them, you should keep an eye on the [configuration file](/config/initializers/health_check.rb) of this gem and do not forget to remove them from the checks.
 
 ## Code Climate
