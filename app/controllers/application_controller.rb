@@ -1,6 +1,4 @@
-class ApplicationController < ActionController::Base
-  protect_from_forgery with: :null_session
-
+class ApplicationController < ActionController::API
   # i18n configuration. See: http://guides.rubyonrails.org/i18n.html
   before_action :set_locale
 
