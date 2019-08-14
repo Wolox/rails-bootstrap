@@ -1,5 +1,5 @@
 test: &test
   adapter: postgresql
   encoding: utf8
-  database: rails-bootstrap_test
+  database: rails-bootstrap_test<%= ENV['TEST_ENV_NUMBER'] %>
   username: postgres

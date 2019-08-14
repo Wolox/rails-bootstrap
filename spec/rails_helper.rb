@@ -1,4 +1,5 @@
 ENV['RAILS_ENV'] ||= 'test'
+require 'support/simplecov_helper'
 require 'support/spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'

@@ -119,6 +119,7 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'parallel_tests'
   gem 'rspec-mocks'
   gem 'rspec-rails'
   gem 'shoulda-matchers'

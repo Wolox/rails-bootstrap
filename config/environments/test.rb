@@ -40,4 +40,8 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   WebMock.allow_net_connect!
+  
+  Capybara.configure do |config|
+    config.server_port = 9887 + ENV['TEST_ENV_NUMBER'].to_i
+  end
 end

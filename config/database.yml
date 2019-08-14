@@ -28,7 +28,7 @@ development: &default
 
 test: &test
   <<: *default
-  database: rails-bootstrap_test
+  database: rails-bootstrap_test<%= ENV['TEST_ENV_NUMBER'] %>
 
 production:
   adapter: postgresql

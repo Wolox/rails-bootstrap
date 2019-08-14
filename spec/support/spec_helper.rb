@@ -1,5 +1,3 @@
-require 'simplecov'
-SimpleCov.start
 require 'factory_bot'
 require 'faker'
 
