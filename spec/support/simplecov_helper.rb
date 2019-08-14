@@ -2,7 +2,7 @@ require 'simplecov'
 
 process_name = "process_#{ENV['TEST_ENV_NUMBER']}##{Process.pid}"
 SimpleCov.command_name process_name
-threshold = ENV['MINIMUM_CODE_COVERAGE'] || 80
+threshold = ENV['MINIMUM_CODE_COVERAGE'] || 0 # TODO: puts real value
 SimpleCov.minimum_coverage 0
 SimpleCov.start 'rails' do
   `mkdir -p ./coverage/`
