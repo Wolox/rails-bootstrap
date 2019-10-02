@@ -31,6 +31,8 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Response::JSONParser, type: :controller
   config.order = 'random'
+
+  ActiveRecord::Base.logger = Logger.new(STDOUT) if defined?(ActiveRecord::Base) && ENV['PRINT_SQL']
 end
 
 ActiveRecord::Migration.maintain_test_schema!

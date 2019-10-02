@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
-ruby '2.6.1'
+ruby '2.6.4'
 gem 'rails', '~> 5.1.6.1'
 
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
+gem 'pg', '~> 1.1.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 3.12.0'
 
-gem 'therubyracer', platforms: :ruby
+gem 'mini_racer', '~> 0.2.0'
 
 # Authentication
 gem 'omniauth'
@@ -44,6 +44,8 @@ group :development do
   # Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.1'
+
+  gem 'rails-erd', '~> 1.6.0', require: false
 end
 
 group :development, :test do
@@ -59,8 +61,10 @@ group :development, :test do
   gem 'faker'
 
   # Lints
-  gem 'rubocop', '~> 0.65.0', require: false
-  gem 'rubocop-rspec', '~> 1.32'
+  gem 'rubocop', '~> 0.75.0', require: false
+  gem 'rubocop-performance', '~> 1.4.0'
+  gem 'rubocop-rails', '~> 2.3.0'
+  gem 'rubocop-rspec', '~> 1.36.0'
 
   # Static analysis for security vulnerabilities
   gem 'brakeman', require: false
@@ -89,6 +93,9 @@ group :test do
   gem 'rails-controller-testing'
 
   gem 'rack-test', require: 'rack/test'
+
+  # To analyze test performance
+  gem 'test-prof', '~> 0.10.0'
 end
 
 group :production do

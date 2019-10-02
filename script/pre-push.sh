@@ -11,7 +11,7 @@ then
 fi
 
 echo "\033[34mRunning Rubocop\033[0m"
-RUN_CHECK_CMD='bundle exec rubocop app spec -R --format simple'
+RUN_CHECK_CMD='bundle exec rubocop app spec --format simple'
 RUN_TESTS_OUTPUT=`${RUN_CHECK_CMD}`
 
 if [ $? -eq 1 ]

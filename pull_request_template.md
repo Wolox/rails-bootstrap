@@ -6,6 +6,6 @@
 
 [Change!] Show the screenshots of the views you modified.
 
-## Trello Card
+## Jira Issue
 
-[Change!] Link to the associated Trello card.
+[Change!] Link to the associated Jira issue.
