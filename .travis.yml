@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.6.1
+  - 2.6.5
 
 addons:
   code_climate:
@@ -31,7 +31,7 @@ before_script:
 
 script:
   - bundle exec rspec spec -fd
-  - bundle exec rubocop app spec -R --format simple
+  - bundle exec rubocop app spec --format simple
 
 #notifications:
 #  email:
