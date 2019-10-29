@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::API
   # i18n configuration. See: http://guides.rubyonrails.org/i18n.html
+  include Wor::Paginate
+
   before_action :set_locale
 
   def set_locale
@@ -17,5 +19,9 @@ class ApplicationController < ActionController::API
 
   def index
     render json: { message: 'Welcome to Rails Bootstrap' }
+  end
+
+  def test
+    render json: TestModel.create(params.permit(:content, :something))
   end
 end
