@@ -1,6 +1,6 @@
 shared_examples 'basic destroy endpoint' do
   it 'destroys the model' do
-    expect { req }.to change { model_klass.count }.by(-1)
+    expect { req }.to change(model_klass, :count).by(-1)
   end
 
   it 'returns status code ok', dictum: DICTUM_DESTROY_DESCRIPTION do

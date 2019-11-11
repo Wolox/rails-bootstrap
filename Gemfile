@@ -1,73 +1,31 @@
 source 'https://rubygems.org'
 
-ruby '2.4.0'
+ruby '2.6.1'
+gem 'rails', '~> 5.1.6.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.3'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+gem 'pg', '~> 1.1'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use fontawesome for common icons
-gem 'font-awesome-rails'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+gem 'puma', '~> 3.12'
 
 gem 'therubyracer', platforms: :ruby
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
-# Use autoprefixer to avoid writing css prefixes
-gem 'autoprefixer-rails'
-
-gem 'bootstrap-sass'
-
-gem 'carrierwave'
-
 # Authentication
-gem 'devise'
-gem 'devise-async', '~> 0.7.0'
-# devise-i18n support
-gem 'devise-i18n'
+gem 'omniauth'
+gem 'devise_token_auth', '~> 1.0'
 
-gem 'responders'
-
-gem 'active_model_serializers'
-
-gem 'foreman'
-
-# Active Admin
-gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
-gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
-
-# Enables Slim templates
-gem 'slim-rails'
+gem 'active_model_serializers', '~> 0.10'
 
 # Sidekiq
-gem 'sidekiq'
+gem 'sidekiq', '~> 5.2'
 gem 'sidekiq-failures'
 gem 'sidekiq_mailer'
-gem 'sinatra', require: nil
 
 # Authorization Policies
 gem 'pundit'
 
 # Exceptions Report
 gem 'rollbar'
-
-# SEO Meta Tags
-gem 'meta-tags'
-gem 'metamagic'
-
-gem 'newrelic_rpm'
 
 gem 'recipient_interceptor'
 # CORS support
@@ -76,23 +34,16 @@ gem 'rack-cors', '~> 1.0.2', require: 'rack/cors'
 # Use for DoS attacks
 gem 'rack-attack'
 
-gem 'webpacker', '~> 3.0'
-
 gem 'health_check', '~> 3.0'
 
 group :development do
   # Gem to detect N+1 queries
-  gem 'better_errors'
   gem 'bullet'
-  gem 'listen', '~> 3.0.5'
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console'
+  gem 'listen', '~> 3.1.5'
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'meta_request'
-
+  gem 'spring-watcher-listen', '~> 2.0.1'
 end
 
 group :development, :test do
@@ -108,10 +59,8 @@ group :development, :test do
   gem 'faker'
 
   # Lints
-  gem 'rubocop', '0.50.0'
-  gem 'rubocop-rspec', '1.10.0'
-
-  gem 'scss_lint', require: false
+  gem 'rubocop', '~> 0.65.0', require: false
+  gem 'rubocop-rspec', '~> 1.32'
 
   # Static analysis for security vulnerabilities
   gem 'brakeman', require: false
