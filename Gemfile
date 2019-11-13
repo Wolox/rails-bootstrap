@@ -28,7 +28,7 @@ gem 'pundit'
 gem 'rollbar'
 
 # Pagination
-gem 'wor-paginate', github: 'Wolox/wor-paginate', branch: 'rails-6-test'
+gem 'wor-paginate', '~> 0.1.8'
 
 # CORS support
 gem 'rack-cors', '~> 1.0.3', require: 'rack/cors'
