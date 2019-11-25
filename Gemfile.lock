@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/Wolox/devise_jwt_controllers.git
+  revision: 3800e52fcd6d8d59ce21317b3f87673bebbb2acc
+  branch: release-0.1.3
+  specs:
+    devise_jwt_controllers (0.1.3)
+      devise (~> 4.7.1)
+      devise-jwt (~> 0.6.0)
+      rails (>= 5.2.0, < 6.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -104,16 +114,25 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise_token_auth (1.1.3)
-      bcrypt (~> 3.0)
-      devise (> 3.5.2, < 5)
-      rails (>= 4.2.0, < 6.1)
+    devise-jwt (0.6.0)
+      devise (~> 4.0)
+      warden-jwt_auth (~> 0.4)
     diff-lcs (1.3)
     docile (1.3.2)
     dotenv (2.7.5)
     dotenv-rails (2.7.5)
       dotenv (= 2.7.5)
       railties (>= 3.2, < 6.1)
+    dry-auto_inject (0.6.1)
+      dry-container (>= 0.3.4)
+    dry-configurable (0.9.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 0.4, >= 0.4.7)
+    dry-container (0.7.2)
+      concurrent-ruby (~> 1.0)
+      dry-configurable (~> 0.1, >= 0.1.3)
+    dry-core (0.4.9)
+      concurrent-ruby (~> 1.0)
     equalizer (0.0.11)
     erubi (1.9.0)
     erubis (2.7.0)
@@ -137,7 +156,6 @@ GEM
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashdiff (1.0.0)
-    hashie (3.6.0)
     health_check (3.0.0)
       railties (>= 5.0)
     i18n (1.7.0)
@@ -146,6 +164,7 @@ GEM
     jaro_winkler (1.5.3)
     json (2.2.0)
     jsonapi-renderer (0.2.2)
+    jwt (2.2.1)
     kwalify (0.7.2)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -168,9 +187,6 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
-    omniauth (1.9.0)
-      hashie (>= 3.4.6, < 3.7.0)
-      rack (>= 1.6.2, < 3)
     orm_adapter (0.5.0)
     parallel (1.18.0)
     parser (2.6.5.0)
@@ -327,6 +343,11 @@ GEM
       equalizer (~> 0.0, >= 0.0.9)
     warden (1.2.8)
       rack (>= 2.0.6)
+    warden-jwt_auth (0.4.0)
+      dry-auto_inject (~> 0.6)
+      dry-configurable (~> 0.8)
+      jwt (~> 2.1)
+      warden (~> 1.2)
     webmock (3.7.6)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -352,13 +373,12 @@ DEPENDENCIES
   byebug
   capybara
   database_cleaner
-  devise_token_auth (~> 1.0)
+  devise_jwt_controllers!
   dotenv-rails
   factory_bot_rails
   faker
   health_check (~> 3.0)
   listen (~> 3.2.0)
-  omniauth
   pg (~> 1.1)
   puma (~> 4.2.1)
   pundit

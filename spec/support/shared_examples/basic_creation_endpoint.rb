@@ -3,7 +3,7 @@ shared_examples 'basic creation endpoint' do
     expect { req }.to change(model_klass, :count).by 1
   end
 
-  it 'returns status code created', dictum: DICTUM_CREATE_DESCRIPTION do
+  it 'returns status code created' do
     req
     expect(response).to have_http_status(:created)
   end
