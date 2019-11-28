@@ -37,6 +37,9 @@ gem 'rack-attack'
 
 gem 'health_check', '~> 3.0'
 
+# Documentation
+gem 'fictium'
+
 group :development do
   # Gem to detect N+1 queries
   gem 'bullet'

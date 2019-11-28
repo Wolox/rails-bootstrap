@@ -144,6 +144,10 @@ GEM
     faker (2.6.0)
       i18n (>= 1.6, < 1.8)
     ffi (1.11.1)
+    fictium (0.3.6)
+      activesupport (>= 5.1, < 6.2)
+      json-schema (~> 2.8)
+      verbs (~> 2.1.4)
     flay (2.12.1)
       erubis (~> 2.7.0)
       path_expander (~> 1.0)
@@ -163,6 +167,8 @@ GEM
     ice_nine (0.11.2)
     jaro_winkler (1.5.3)
     json (2.2.0)
+    json-schema (2.8.1)
+      addressable (>= 2.4)
     jsonapi-renderer (0.2.2)
     jwt (2.2.1)
     kwalify (0.7.2)
@@ -336,6 +342,9 @@ GEM
       thread_safe (~> 0.1)
     unicode-display_width (1.6.0)
     uniform_notifier (1.13.0)
+    verbs (2.1.4)
+      activesupport (>= 2.3.4)
+      i18n
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -377,6 +386,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
+  fictium
   health_check (~> 3.0)
   listen (~> 3.2.0)
   pg (~> 1.1)

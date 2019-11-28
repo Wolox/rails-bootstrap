@@ -1,5 +1,5 @@
 shared_examples 'basic update endpoint' do
-  it 'returns status code ok', dictum: DICTUM_UPDATE_DESCRIPTION do
+  it 'returns status code ok' do
     req
     expect(response).to have_http_status(:ok)
   end

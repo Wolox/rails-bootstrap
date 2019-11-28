@@ -3,7 +3,7 @@ shared_examples 'basic destroy endpoint' do
     expect { req }.to change(model_klass, :count).by(-1)
   end
 
-  it 'returns status code ok', dictum: DICTUM_DESTROY_DESCRIPTION do
+  it 'returns status code ok' do
     req
     expect(response).to have_http_status(:ok)
   end
