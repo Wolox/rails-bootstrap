@@ -19,7 +19,7 @@ Style/Documentation:
 Metrics/LineLength:
   Max: 99
 
-HasAndBelongsToMany:
+Rails/HasAndBelongsToMany:
   Enabled: false
 
 Metrics/BlockLength:

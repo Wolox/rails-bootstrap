@@ -62,9 +62,9 @@ group :development, :test do
 
   # Lints
   gem 'rubocop', '~> 0.75.0', require: false
-  gem 'rubocop-performance', '~> 1.4.0'
-  gem 'rubocop-rails', '~> 2.3.0'
-  gem 'rubocop-rspec', '~> 1.36.0'
+  gem 'rubocop-performance', '~> 1.4.0', require: false
+  gem 'rubocop-rails', '~> 2.3.0', require: false
+  gem 'rubocop-rspec', '~> 1.36.0', require: false
 
   # Static analysis for security vulnerabilities
   gem 'brakeman', require: false
