@@ -76,7 +76,6 @@ group :test do
   gem 'formulaic'
   gem 'launchy'
 
-  gem 'timecop'
   gem 'webmock'
 
   # CodeStats
