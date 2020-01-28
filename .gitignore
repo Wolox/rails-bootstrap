@@ -14,6 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+.byebug_history
 
 # OS X Files
 .DS_Store
@@ -31,3 +32,6 @@ coverage/*
 public/uploads
 
 dump.rdb
+
+# Ignore generated sonarqube files
+.scannerwork/*
