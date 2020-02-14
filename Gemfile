@@ -11,7 +11,7 @@ gem 'puma', '~> 4.2.1'
 gem 'therubyracer', platforms: :ruby
 
 # Authentication
-gem 'devise_jwt_controllers', github:'Wolox/devise_jwt_controllers', branch: 'release-0.1.3'
+gem 'devise_jwt_controllers'
 
 gem 'active_model_serializers', '~> 0.10'
 
