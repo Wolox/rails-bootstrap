@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.6.1'
+ruby '2.6.5'
 gem 'rails', '~> 5.1.6.1'
+gem 'bundler', '~> 2.1.4'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
