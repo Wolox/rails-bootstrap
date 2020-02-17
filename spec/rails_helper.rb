@@ -5,6 +5,7 @@ require 'rspec/rails'
 require 'capybara/rspec'
 require 'pundit/rspec'
 require 'wor/paginate/rspec'
+require 'fictium/rspec'
 include ActionDispatch::TestProcess
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
@@ -43,4 +44,9 @@ Shoulda::Matchers.configure do |config|
     with.library :active_model
     with.library :rails
   end
+end
+
+Fictium.configure do |config|
+  config.fixture_path = File.join(__dir__, 'support', 'docs')
+  config.exporters << Fictium::Postman::V2Exporter.new
 end

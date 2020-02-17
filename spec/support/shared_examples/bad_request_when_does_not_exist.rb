@@ -1,7 +1,7 @@
 shared_examples 'bad request when it does not exist' do
   let(:req) { get :show, params: { id: invalid_id } }
 
-  context "when model doesn't exist" do
+  describe example 'with invalid information' do
     let(:invalid_id) { 0 }
 
     it 'returns status code bad request' do
