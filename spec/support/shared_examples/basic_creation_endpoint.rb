@@ -1,17 +1,20 @@
 shared_examples 'basic creation endpoint' do
-  it 'creates the model' do
-    expect { req }.to change(model_klass, :count).by 1
-  end
+  describe example 'with valid information' do
 
-  it 'returns status code created' do
-    req
-    expect(response).to have_http_status(:created)
-  end
+    it 'creates the model' do
+      expect { req }.to change(model_klass, :count).by 1
+    end
 
-  it 'returns the correct schema for the model' do
-    if schema_name
+    it 'returns status code created' do
       req
-      expect(response).to match_response_schema(schema_name, strict: true)
+      expect(response).to have_http_status(:created)
+    end
+
+    it 'returns the correct schema for the model' do
+      if schema_name
+        req
+        expect(response).to match_response_schema(schema_name, strict: true)
+      end
     end
   end
 end

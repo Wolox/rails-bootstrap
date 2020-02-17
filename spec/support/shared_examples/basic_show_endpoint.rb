@@ -6,7 +6,7 @@ shared_examples 'basic show endpoint' do
     req
   end
 
-  context 'when the model exists' do
+  describe example 'when the model exists' do
     it 'returns status code ok' do
       expect(response).to have_http_status(:ok)
     end

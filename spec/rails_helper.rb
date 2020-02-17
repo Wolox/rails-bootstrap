@@ -48,4 +48,5 @@ end
 
 Fictium.configure do |config|
   config.fixture_path = File.join(__dir__, 'support', 'docs')
+  config.exporters << Fictium::Postman::V2Exporter.new
 end
