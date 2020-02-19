@@ -31,7 +31,7 @@ before_script:
 
 script:
   - bundle exec rspec spec -fd
-  - bundle exec rubocop app spec -R --format simple
+  - bundle exec rubocop app spec --format simple
 
 #notifications:
 #  email:
