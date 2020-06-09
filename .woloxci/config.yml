@@ -7,16 +7,21 @@ services:
   - redis
 
 steps:
+  config:
+    - rm -rf metrics && mkdir metrics && cp .woloxci/metrics.sh metrics/metrics.sh && chmod +x metrics/metrics.sh
+    - bundle install | tee -a metrics/bundle_install
   analysis:
     - bundle exec rubocop app spec --format simple
-    - bundle exec rubycritic --path ./analysis --minimum-score 80 --no-browser
+    - bundle exec rubycritic --path ./analysis --minimum-score 80 --no-browser | tee -a metrics/rubycritic_report
   setup_db:
     - bundle exec rails db:create
     - bundle exec rails db:schema:load
   test:
-    - bundle exec rspec
+    - bundle exec rspec | tee -a metrics/rspec_report
   security:
     - bundle exec brakeman --exit-on-error
+  metrics:
+    - ./metrics/metrics.sh rails-bootstrap rails-bootstrap master
 
 environment:
   RAILS_ENV: test
