@@ -4,6 +4,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'pundit/rspec'
+require 'wor/paginate/rspec'
 include ActionDispatch::TestProcess
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }

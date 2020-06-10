@@ -194,7 +194,7 @@ You can find more documentation in the [docs](docs) folder. The documentation av
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Run rspec tests (`bundle exec rspec spec -fd`)
 5. Run scss lint (`bundle exec scss-lint app/assets/stylesheets/`)
-6. Run rubocop lint (`bundle exec rubocop app spec -R`)
+6. Run rubocop lint (`bundle exec rubocop app spec`)
 7. Push your branch (`git push origin my-new-feature`)
 8. Create a new Pull Request
 
