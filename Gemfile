@@ -8,7 +8,7 @@ gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 4.3.5'
 
-gem 'therubyracer', platforms: :ruby
+gem 'mini_racer', '~> 0.4.0'
 
 # Authentication
 gem 'devise_token_auth', '~> 1.0'
@@ -46,6 +46,8 @@ group :development do
   # Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.1'
+  # Generate Entity-Relationship Diagrams
+  gem 'rails-erd', require: false
 end
 
 group :development, :test do
@@ -62,8 +64,9 @@ group :development, :test do
 
   # Lints
   gem 'rubocop', '~> 0.75.1', require: false
-  gem 'rubocop-rails', '~> 2.3.2', require: false
-  gem 'rubocop-rspec', '~> 1.36.0'
+  gem 'rubocop-rails', '~> 2.5.2', require: false
+  gem 'rubocop-rspec', '~> 1.41.0', require: false
+  gem 'rubocop-performance', '~> 1.6.0', require: false
 
   # Static analysis for security vulnerabilities
   gem 'brakeman', require: false
@@ -83,4 +86,7 @@ group :test do
   gem 'simplecov', require: false
 
   gem 'rack-test', require: 'rack/test'
+
+  # Analyze test performance
+  gem 'test-prof', '~> 1.0'
 end
