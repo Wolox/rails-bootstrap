@@ -11,8 +11,7 @@ gem 'puma', '~> 4.3.5'
 gem 'therubyracer', platforms: :ruby
 
 # Authentication
-gem 'devise_token_auth', '~> 1.0'
-gem 'omniauth'
+gem 'devise_jwt_controllers'
 
 gem 'active_model_serializers', '~> 0.10'
 

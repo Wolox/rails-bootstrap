@@ -2,6 +2,10 @@ class ApplicationController < ActionController::API
   # i18n configuration. See: http://guides.rubyonrails.org/i18n.html
   before_action :set_locale
 
+  include Wor::Paginate
+  include ActionController::MimeResponds
+  respond_to :json
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end

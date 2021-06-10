@@ -2,6 +2,7 @@ require 'simplecov'
 SimpleCov.start
 require 'factory_bot'
 require 'faker'
+require 'devise/jwt/test_helpers'
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
