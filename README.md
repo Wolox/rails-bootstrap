@@ -34,13 +34,13 @@ You can skip the hook by adding `--no-verify` to your `git push`.
 - Install [Bundler](http://bundler.io/).
 
 ```bash
-  gem install bundler --no-ri --no-rdoc
+  gem install bundler --no-document
   rbenv rehash
 ```
 - Install basic dependencies if you are using Ubuntu:
 
 ```bash
-  sudo apt-get install build-essential libpq-dev nodejs
+  sudo apt install build-essential libpq-dev nodejs
 ```
 
 - Install all the gems included in the project.
