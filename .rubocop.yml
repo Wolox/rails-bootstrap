@@ -1,4 +1,6 @@
  # This is the configuration used to check the rubocop source code.
+inherit_gem:
+  test-prof: config/rubocop-rspec.yml
 
 AllCops:
   Exclude:
@@ -8,6 +10,7 @@ AllCops:
     - docs/**/*
     - config/**/*
     - bin/**/*
+    - node_modules/**/*
 
 Style/Documentation:
   Enabled: false
@@ -30,6 +33,7 @@ Style/FrozenStringLiteralComment:
 require:
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-performance
 
 Naming/VariableNumber:
   EnforcedStyle: snake_case
