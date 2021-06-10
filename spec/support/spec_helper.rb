@@ -5,6 +5,7 @@ require 'faker'
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
+  config.include ActiveSupport::Testing::TimeHelpers
 
   Faker::Config.random = Random.new(config.seed)
 
@@ -27,6 +28,6 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
-    Timecop.return
+    travel_back
   end
 end

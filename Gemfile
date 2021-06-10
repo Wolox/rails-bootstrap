@@ -76,7 +76,6 @@ group :test do
 
   gem 'capybara'
 
-  gem 'timecop'
   gem 'webmock'
 
   # CodeStats

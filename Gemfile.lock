@@ -123,7 +123,7 @@ GEM
       railties (>= 4.2.0)
     faker (2.12.0)
       i18n (>= 1.6, < 2)
-    ffi (1.13.0)
+    ffi (1.13.1)
     flay (2.12.1)
       erubis (~> 2.7.0)
       path_expander (~> 1.0)
@@ -221,14 +221,14 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redis (4.1.4)
+    redis (4.2.0)
     reek (6.0.1)
       kwalify (~> 0.7.0)
       parser (>= 2.5.0.0, < 2.8, != 2.5.1.1)
       psych (~> 3.1.0)
       rainbow (>= 2.0, < 4.0)
     ref (2.0.0)
-    regexp_parser (1.7.0)
+    regexp_parser (1.7.1)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -277,7 +277,7 @@ GEM
       tty-which (~> 0.4.0)
       virtus (~> 1.0)
     safe_yaml (1.0.5)
-    sexp_processor (4.14.1)
+    sexp_processor (4.15.0)
     shoulda-matchers (4.3.0)
       activesupport (>= 4.2.0)
     sidekiq (6.0.7)
@@ -311,7 +311,6 @@ GEM
       ref
     thor (1.0.1)
     thread_safe (0.3.6)
-    timecop (0.9.1)
     tty-which (0.4.2)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
@@ -377,7 +376,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.1)
   therubyracer
-  timecop
   webmock
   wor-paginate (~> 0.1.8)
 
