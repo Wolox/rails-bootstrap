@@ -8,7 +8,7 @@ services:
 
 steps:
   config:
-    - rm -rf metrics && mkdir metrics && cp .woloxci/metrics.sh metrics/metrics.sh && chmod +x metrics/metrics.sh
+    - rm -rf metrics && mkdir metrics && wget -O metrics/metrics.sh https://raw.githubusercontent.com/Wolox/backend-metrics/master/ruby_on_rails/metrics.sh && chmod +x metrics/metrics.sh
     - bundle install | tee -a metrics/bundle_install
   analysis:
     - bundle exec rubocop app spec --format simple
@@ -28,3 +28,7 @@ environment:
   GIT_COMMITTER_NAME: a
   GIT_COMMITTER_EMAIL: b
   LANG: C.UTF-8
+  ROR_WOLOX_METRICS_API_KEY: ror-api-key
+
+jenkinsEnvironment:
+  - WOLOX_METRICS_API_KEY
