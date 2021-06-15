@@ -2,6 +2,7 @@ require 'simplecov'
 SimpleCov.start
 require 'factory_bot'
 require 'faker'
+require 'active_support/testing/time_helpers'
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
